@@ -1,119 +1,99 @@
-<section id="projects" class="section">
-    <h2>Projects</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miheer's Robotics Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Side Navigation -->
+    <div class="side-nav">
+        <a href="#about" class="side-link active">About</a>
+        <a href="#education" class="side-link">Education</a>
+        <a href="#experience" class="side-link">Experience</a>
+        <a href="#projects" class="side-link">Projects</a>
+        <a href="#contact" class="side-link">Contact</a>
+    </div>
 
-    <!-- Computer Vision Projects -->
-    <div class="projects-category">
-        <h3>Computer Vision Projects</h3>
-        <div class="projects-container">
-            <div class="project-card">
-                <img src="assets/project_cv1.jpg" alt="Computer Vision Project 1">
-                <div class="project-info">
-                    <h4>Object Detection for Drones</h4>
-                    <p>Implemented real-time object detection using YOLO and ROS2 for autonomous drones.</p>
-                    <video autoplay loop muted>
-                        <source src="assets/project_cv1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+    <header>
+        <div class="header-container">
+            <h1>Miheer's Robotics Portfolio</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hi, I'm Miheer, a Robotics Engineer with expertise in perception, AI, and autonomous systems. Welcome to my portfolio!</p>
+    </section>
+
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <div class="education-container">
+            <div class="education-card">
+                <h3>Master's in Robotics</h3>
+                <p><strong>Worcester Polytechnic Institute</strong>, 2024</p>
+                <p>Focus: Perception, computer vision, machine learning, and autonomous systems.</p>
             </div>
-            <div class="project-card">
-                <img src="assets/project_cv2.jpg" alt="Computer Vision Project 2">
-                <div class="project-info">
-                    <h4>Traffic Sign Detection</h4>
-                    <p>Developed a model to detect and classify traffic signs for autonomous vehicles using OpenCV and TensorFlow.</p>
-                    <video autoplay loop muted>
-                        <source src="assets/project_cv2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+            <div class="education-card">
+                <h3>Bachelor's in Engineering</h3>
+                <p><strong>Your University</strong>, 2020</p>
+                <p>Focus: Robotics and Embedded Systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <h2>Experience</h2>
+        <div class="experience-container">
+            <div class="experience-card">
+                <h3>Robotics Engineer Intern</h3>
+                <p><strong>Your Company</strong>, 2024</p>
+                <p>Worked on perception stacks, LiDAR point cloud fusion, and navigation algorithms.</p>
+            </div>
+            <div class="experience-card">
+                <h3>Research Assistant</h3>
+                <p><strong>Your Institution</strong>, 2023</p>
+                <p>Developed deep learning models for object detection in real-time autonomous systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-category">
+            <h3>Computer Vision Projects</h3>
+            <div class="projects-container">
+                <div class="project-card">
+                    <img src="assets/project_cv1.jpg" alt="Computer Vision Project 1">
+                    <div class="project-info">
+                        <h4>Object Detection for Drones</h4>
+                        <p>Implemented real-time object detection using YOLO and ROS2 for autonomous drones.</p>
+                        <video autoplay loop muted>
+                            <source src="assets/project_cv1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Deep Learning Projects -->
-    <div class="projects-category">
-        <h3>Deep Learning Projects</h3>
-        <div class="projects-container">
-            <div class="project-card">
-                <img src="assets/project_dl1.jpg" alt="Deep Learning Project 1">
-                <div class="project-info">
-                    <h4>Path Planning with Deep RL</h4>
-                    <p>Designed a reinforcement learning model for robot navigation in dynamic environments.</p>
-                    <video autoplay loop muted>
-                        <source src="assets/project_dl1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="assets/project_dl2.jpg" alt="Deep Learning Project 2">
-                <div class="project-info">
-                    <h4>Image Segmentation</h4>
-                    <p>Implemented a semantic segmentation model for autonomous vehicle scene understanding.</p>
-                    <video autoplay loop muted>
-                        <source src="assets/project_dl2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-        </div>
-    </div>
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:miheer@example.com">miheer@example.com</a></p>
+    </section>
 
-    <!-- Simulation Projects -->
-    <div class="projects-category">
-        <h3>Simulation Projects</h3>
-        <div class="projects-container">
-            <div class="project-card">
-                <img src="assets/project_sim1.jpg" alt="Simulation Project 1">
-                <div class="project-info">
-                    <h4>Gazebo Simulation</h4>
-                    <p>Simulated a robot navigating multiple waypoints in Gazebo using ROS2 and Nav2.</p>
-                    <video autoplay loop muted>
-                        <source src="assets/project_sim1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="assets/project_sim2.jpg" alt="Simulation Project 2">
-                <div class="project-info">
-                    <h4>Warehouse Robot Simulation</h4>
-                    <p>Created a simulation of an autonomous warehouse robot optimizing delivery routes.</p>
-                    <video autoplay loop muted>
-                        <source src="assets/project_sim2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation Projects -->
-    <div class="projects-category">
-        <h3>Navigation Projects</h3>
-        <div class="projects-container">
-            <div class="project-card">
-                <img src="assets/project_nav1.jpg" alt="Navigation Project 1">
-                <div class="project-info">
-                    <h4>LiDAR Navigation</h4>
-                    <p>Developed a LiDAR-based navigation system for autonomous ground vehicles.</p>
-                    <video autoplay loop muted>
-                        <source src="assets/project_nav1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="assets/project_nav2.jpg" alt="Navigation Project 2">
-                <div class="project-info">
-                    <h4>GPS-Based Navigation</h4>
-                    <p>Created a GPS-based path planning system for unmanned ground vehicles using ROS2.</p>
-                    <video autoplay loop muted>
-                        <source src="assets/project_nav2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    <footer>
+        <p>&copy; 2024 Miheer Diwan. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
