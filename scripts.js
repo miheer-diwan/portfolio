@@ -1,11 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll("button");
-    buttons.forEach(button => {
-        button.addEventListener("mouseover", () => {
-            button.classList.add("hover-effect");
+    const sections = document.querySelectorAll(".section");
+    const sideLinks = document.querySelectorAll(".side-link");
+
+    const highlightSection = () => {
+        let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                sideLinks.forEach(link => link.classList.remove("active"));
+                sideLinks[index].classList.add("active");
+            }
         });
-        button.addEventListener("mouseleave", () => {
-            button.classList.remove("hover-effect");
-        });
-    });
+    };
+
+    window.addEventListener("scroll", highlightSection);
 });
