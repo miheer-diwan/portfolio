@@ -123,3 +123,45 @@ button:hover {
     gap: 20px;
     justify-content: center;
 }
+
+/* Side Navigation */
+.side-nav {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.side-link {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    background: #f4f4f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.side-link:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.side-link.active {
+    background-color: #0056b3;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
