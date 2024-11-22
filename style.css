@@ -81,8 +81,11 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Education and Experience Cards */
+/* Education and Experience Cards (One Below the Other) */
 .education-card, .experience-card {
+    width: 100%; /* Full width to make cards stack */
+    max-width: 600px; /* Optional: Limit maximum width for a cleaner layout */
+    margin: 10px auto; /* Center the cards and add vertical spacing */
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -99,10 +102,11 @@ html {
 /* Education and Experience Layout */
 .education-container, .experience-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    flex-direction: column; /* Stacks cards vertically */
+    align-items: center; /* Center aligns the cards */
+    gap: 20px; /* Space between cards */
 }
+
 
 /* Project Cards */
 .project-card {
