@@ -1,4 +1,4 @@
-/* General Styles (for desktop and laptop screens) */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -36,12 +36,18 @@ header nav a:hover {
 .side-nav {
     position: fixed;
     top: 50%;
-    left: 10px;
+    right: 10px;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 10px;
     z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.side-nav.visible {
+    opacity: 1;
 }
 
 .side-link {
@@ -69,116 +75,7 @@ header nav a:hover {
     font-weight: bold;
 }
 
-/* Responsive Project Cards */
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.project-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 100%;
-    overflow: hidden;
-    text-align: left;
-}
-
-.project-card img, .project-card video {
-    width: 100%;
-    height: auto;
-}
-
-.project-info {
-    padding: 15px;
-}
-
-/* Responsive Containers */
-.education-container, .experience-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.education-card, .experience-card {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 600px;
-    width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
-
-/* Media Queries for Responsive Design */
-
-/* For tablets and smaller screens */
-@media (max-width: 1024px) {
-    .side-nav {
-        left: 5px;
-    }
-
-    header nav a {
-        font-size: 16px;
-        margin: 0 10px;
-    }
-}
-
-/* For mobile screens */
-@media (max-width: 768px) {
-    header {
-        padding: 15px;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header nav a {
-        font-size: 14px;
-        margin: 0 5px;
-    }
-
-    .section {
-        padding: 20px;
-    }
-
-    .side-nav {
-        display: none; /* Hide side navigation for small screens */
-    }
-
-    .project-card {
-        max-width: 100%;
-    }
-}
-
-/* For very small screens (e.g., phones in portrait mode) */
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.2rem;
-    }
-
-    header nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header nav a {
-        margin: 5px 0;
-    }
-
-    .education-card, .experience-card {
-        padding: 15px;
-    }
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
