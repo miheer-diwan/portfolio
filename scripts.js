@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Show/Hide projects based on the filter
             projects.forEach(project => {
-                const category = project.getAttribute("data-category").split("");
-                if (filter === "all" || category.includes(filter)) {
+                const categories = project.getAttribute("data-category").split(" ");
+                if (filter === "all" || categories.includes(filter)) {
                     project.classList.add("visible");
                 } else {
                     project.classList.remove("visible");
