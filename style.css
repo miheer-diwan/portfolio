@@ -172,7 +172,7 @@ html {
     background-color: #f4f4f9;
     color: #333;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 25px;
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
@@ -464,7 +464,7 @@ body.dark .filter-btn:hover {
     padding: 5px 10px;
     background-color: #007bff; /* Light mode color */
     color: #fff;
-    border-radius: 5px;
+    border-radius: 25px;
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
@@ -478,6 +478,15 @@ body.dark .filter-btn:hover {
 }
 
 .side-circle.active::after {
+    content: attr(data-title);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 25px; /* Rounder rectangle for text background */
     opacity: 1;
     pointer-events: auto;
 }
