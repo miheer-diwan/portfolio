@@ -107,6 +107,37 @@ html {
     gap: 20px;
 }
 
+/* Two-Column Layout for Education and Experience */
+.education-content, .experience-content {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between image and description */
+}
+
+.education-content img, .experience-content img {
+    width: 150px; /* Adjust width as needed */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.education-description, .experience-description {
+    text-align: justify; /* Justify the text */
+    flex: 1; /* Take the remaining space */
+}
+
+.education-card, .experience-card {
+    width: 100%;
+    max-width: 800px; /* Optional: Limit maximum width */
+    margin: 10px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
 /* Project Cards */
 .project-card {
     background-color: #fff;
