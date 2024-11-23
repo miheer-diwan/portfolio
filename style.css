@@ -689,6 +689,17 @@ body.dark .btn-report:hover {
     cursor: pointer;
 }
 
+/* Keyframe for expanding animation */
+@keyframes expand {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 /* Carousel */
 .carousel {
     position: relative;
