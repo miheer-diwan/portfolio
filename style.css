@@ -203,73 +203,64 @@ html {
 }
 
 .theme-label {
-    width: 60px;
-    height: 30px;
+    width: 60px; /* Elliptical shape width */
+    height: 30px; /* Elliptical shape height */
     background-color: #ddd;
     border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Position icons correctly */
-    padding: 0 5px; /* Add padding for the icons */
     position: relative;
     cursor: pointer;
+    overflow: hidden; /* Hide parts outside the ellipse */
     transition: background-color 0.3s ease;
 }
 
 .theme-label .sun,
 .theme-label .moon {
     position: absolute;
-    top: 2px;
-    font-size: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #333;
     transition: all 0.3s ease;
 }
 
-
-.theme-label .sun,
-.theme-label .moon {
-    font-size: 16px; /* Icon size */
-    color: #fff; /* Icon color */
-    z-index: 1; /* Ensure icons are above the white circle */
-}
-
 .theme-label .sun {
-    opacity: 1; /* Show sun by default */
-    transition: opacity 0.3s ease;
+    left: 10px; /* Position sun on the left */
 }
 
 .theme-label .moon {
-    opacity: 0; /* Hide moon by default */
-    transition: opacity 0.3s ease;
+    right: 10px; /* Position moon on the right */
 }
 
 .theme-label::after {
     content: "";
-    width: 24px; /* Adjust size for the white button */
-    height: 24px;
+    width: 26px; /* Size of the white round button */
+    height: 26px;
     background-color: #fff;
     border-radius: 50%;
     position: absolute;
-    top: 3px; /* Center the button vertically */
-    left: 3px; /* Position for light mode */
+    top: 2px;
+    left: 2px; /* Starting position for light mode */
     transition: all 0.3s ease;
-    z-index: 0; /* Ensure it's behind the icons */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Ensure the button is above the icons */
 }
 
 input:checked + .theme-label {
     background-color: #333; /* Dark mode background */
 }
 
+input:checked + .theme-label::after {
+    transform: translateX(30px); /* Move the button to the right */
+}
+
 input:checked + .theme-label .sun {
-    opacity: 0; /* Hide sun */
+    color: #fff; /* Adjust sun color in dark mode */
 }
 
 input:checked + .theme-label .moon {
-    opacity: 1; /* Show moon */
+    color: #fff; /* Adjust moon color in dark mode */
 }
 
-input:checked + .theme-label::after {
-    transform: translateX(30px); /* Move the white button to the right */
-}
 /* Dark Mode Styles */
 body.dark {
     background-color: #121212;
