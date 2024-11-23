@@ -302,8 +302,15 @@ header.dark nav a:hover {
     color: #ff0000; /* Change hover color to red */
 }
 
-header.dark nav a:active {
-    color: #ff4545; /* Change hover color to red */
+/* Active Nav Tab Color in Dark Mode */
+header.dark nav a.active {
+    color: #ff0000; /* Red for active tab */
+    font-weight: bold; /* Optional: Highlight active tab with bold text */
+}
+
+.side-link.dark.active {
+    background-color: #ff0000; /* Red highlight for active side nav tab */
+    color: #fff; /* White text for active tab */
 }
 
 .side-link.dark {
