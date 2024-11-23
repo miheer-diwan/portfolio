@@ -24,7 +24,7 @@ header nav a {
 
 header nav a:hover {
     transform: scale(1.1);
-    color: #f4f4f9;
+    color: #007bff;
 }
 
 /* Section Styles */
