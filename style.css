@@ -630,3 +630,15 @@ body.dark .btn-report:hover {
     margin: 0 auto;
     line-height: 1.6;
 }
+
+
+img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    border-radius: 8px; /* Optional: Rounded corners for a smoother look */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Optional: Add a hover effect */
+img:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+}
