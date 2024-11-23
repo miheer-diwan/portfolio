@@ -203,12 +203,14 @@ html {
 }
 
 .theme-label {
-    width: 50px;
-    height: 25px;
+    width: 60px;
+    height: 30px;
     background-color: #ddd;
     border-radius: 15px;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Position icons correctly */
+    padding: 0 5px; /* Add padding for the icons */
     position: relative;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -222,44 +224,52 @@ html {
     transition: all 0.3s ease;
 }
 
+
+.theme-label .sun,
+.theme-label .moon {
+    font-size: 16px; /* Icon size */
+    color: #fff; /* Icon color */
+    z-index: 1; /* Ensure icons are above the white circle */
+}
+
 .theme-label .sun {
-    left: 5px;
-    opacity: 1;
+    opacity: 1; /* Show sun by default */
+    transition: opacity 0.3s ease;
 }
 
 .theme-label .moon {
-    right: 5px;
-    opacity: 0;
+    opacity: 0; /* Hide moon by default */
+    transition: opacity 0.3s ease;
 }
 
 .theme-label::after {
     content: "";
-    width: 20px;
-    height: 20px;
+    width: 24px; /* Adjust size for the white button */
+    height: 24px;
     background-color: #fff;
     border-radius: 50%;
     position: absolute;
-    top: 2.5px;
-    left: 3px;
+    top: 3px; /* Center the button vertically */
+    left: 3px; /* Position for light mode */
     transition: all 0.3s ease;
+    z-index: 0; /* Ensure it's behind the icons */
 }
 
 input:checked + .theme-label {
-    background-color: #333;
+    background-color: #333; /* Dark mode background */
 }
 
 input:checked + .theme-label .sun {
-    opacity: 0;
+    opacity: 0; /* Hide sun */
 }
 
 input:checked + .theme-label .moon {
-    opacity: 1;
+    opacity: 1; /* Show moon */
 }
 
 input:checked + .theme-label::after {
-    transform: translateX(25px);
+    transform: translateX(30px); /* Move the white button to the right */
 }
-
 /* Dark Mode Styles */
 body.dark {
     background-color: #121212;
