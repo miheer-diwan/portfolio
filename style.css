@@ -631,29 +631,12 @@ body.dark .btn-report:hover {
     line-height: 1.6;
 }
 
-
-/* General Image Styles */
-img {
-    border-radius: 4px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+.project-card img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
 }
 
-/* Light Mode Shadow */
-body:not(.dark) img {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Dark shadow in light mode */
-}
-
-body:not(.dark) img:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
-    transform: scale(1.03); /* Optional: Slight zoom effect */
-}
-
-/* Dark Mode Shadow */
-body.dark img {
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Light shadow in dark mode */
-}
-
-body.dark img:hover {
-    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3); /* Stronger light shadow on hover */
-    transform: scale(1.03); /* Optional: Slight zoom effect */
+.project-card img:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
