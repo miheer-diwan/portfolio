@@ -520,3 +520,9 @@ body.dark .btn-report {
 body.dark .btn-report:hover {
     background-color: #cc0000;
 }
+
+/* Icons using Font Awesome */
+.btn i {
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle;
+}
