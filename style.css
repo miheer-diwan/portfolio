@@ -686,24 +686,20 @@ body.dark .btn-report:hover {
     overflow: hidden; /* Ensure content fits within the modal */
 }
 
-.project-modal-content .close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
 .project-modal-column {
     flex: 1; /* Default equal space for columns */
     overflow: hidden; /* Prevent content overflow */
+    display: flex; /* Ensure alignment of content */
+    flex-direction: column; /* Align column content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align content to the left */
 }
 
 .project-modal-column.wide {
     flex: 2; /* Make the image carousel column wider */
+    align-items: center; /* Center carousel in the wide column */
 }
 
-/* Carousel inside the modal */
 .project-modal .carousel {
     width: 100%; /* Full width inside the column */
     height: 100%; /* Make carousel fill its container */
@@ -716,7 +712,7 @@ body.dark .btn-report:hover {
 .project-modal .carousel-slide {
     display: none;
     width: 100%;
-    height: 80%; /* Adjust height of the carousel content */
+    height: 100%; /* Adjust height of the carousel content */
     justify-content: center;
     align-items: center;
 }
