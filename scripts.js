@@ -77,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
         filterBtns.forEach(btn => btn.classList.remove("dark")); // Remove dark mode from filter buttons
     }
 
-
     // Project Filtering Logic
     filterBtns.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -103,4 +102,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize: Show all projects by default
     document.querySelector('.filter-btn[data-filter="all"]').click();
+
+    // --- Carousel Logic ---
+    const slides = document.querySelectorAll(".carousel-slide");
+    const prevButton = document.querySelector(".carousel-prev");
+    const nextButton = document.querySelector(".carousel-next");
+    let currentSlide = 0;
+
+    const updateSlide = (index) => {
+        slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            if (i === index) slide.classList.add("active");
+        });
+    };
+
+    prevButton.addEventListener("click", () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlide(currentSlide);
+    });
+
+    nextButton.addEventListener("click", () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlide(currentSlide);
+    });
+
+    // Auto-advance the carousel every 5 seconds
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlide(currentSlide);
+    }, 5000);
 });
