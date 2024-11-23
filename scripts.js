@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("header").classList.add("dark");
     cards.forEach(card => card.classList.add("dark"));
     sideLinks.forEach(link => link.classList.add("dark")); // Apply dark mode to side links
-    }   
+    }
 
     // Function to remove dark mode
     function removeDarkMode() {

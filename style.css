@@ -302,6 +302,10 @@ header.dark nav a:hover {
     color: #ff0000; /* Change hover color to red */
 }
 
+header.dark nav a:active {
+    color: #ff4545; /* Change hover color to red */
+}
+
 .side-link.dark {
     background: #000; /* Change side navigation background to black */
     color: #fff; /* Change side navigation text color to white */
