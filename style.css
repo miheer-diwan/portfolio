@@ -224,11 +224,11 @@ html {
 }
 
 .theme-label .sun {
-    left: 10px; /* Position sun on the left */
+    left: 5px; /* Position sun on the left */
 }
 
 .theme-label .moon {
-    right: 10px; /* Position moon on the right */
+    right: 5px; /* Position moon on the right */
 }
 
 .theme-label::after {
