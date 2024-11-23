@@ -508,7 +508,7 @@ body.dark .side-circle.active::after {
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: center;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
