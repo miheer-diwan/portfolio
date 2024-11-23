@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000);
 
     // Open modal
-    projectCards.forEach(card => {
+    projects.forEach(card => {
         card.addEventListener("click", () => {
             const modalId = card.getAttribute("data-modal");
             const modal = document.getElementById(modalId);

@@ -668,6 +668,7 @@ body.dark .btn-report:hover {
 
 .project-modal.active {
     display: flex;
+    animation: expand 0.3s ease-in-out;
 }
 
 .project-modal-content {
@@ -748,4 +749,13 @@ body.dark .btn-report:hover {
 
 .carousel-controls button:hover {
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark .project-modal-content {
+    background-color: #1e1e1e;
+    color: #f4f4f9;
+}
+
+body.dark .close-modal {
+    color: #f4f4f9;
 }
