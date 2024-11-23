@@ -679,9 +679,11 @@ body.dark .btn-report:hover {
     padding: 20px;
     border-radius: 10px;
     width: 90%; /* Adjust modal size */
-    max-width: 800px; /* Larger modal width */
+    max-width: 900px; /* Larger modal width */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
+    height: 80%; /* Adjust height for larger modals */
+    overflow: hidden; /* Ensure content fits within the modal */
 }
 
 .project-modal-content .close-modal {
@@ -694,6 +696,7 @@ body.dark .btn-report:hover {
 
 .project-modal-column {
     flex: 1; /* Default equal space for columns */
+    overflow: hidden; /* Prevent content overflow */
 }
 
 .project-modal-column.wide {
@@ -703,14 +706,17 @@ body.dark .btn-report:hover {
 /* Carousel inside the modal */
 .project-modal .carousel {
     width: 100%; /* Full width inside the column */
-    height: 300px; /* Adjust height of the carousel */
-    overflow: hidden;
+    height: 100%; /* Make carousel fill its container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .project-modal .carousel-slide {
     display: none;
     width: 100%;
-    height: 100%;
+    height: 80%; /* Adjust height of the carousel content */
     justify-content: center;
     align-items: center;
 }
@@ -721,18 +727,18 @@ body.dark .btn-report:hover {
 
 .project-modal .carousel img,
 .project-modal .carousel video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%; /* Ensure images/videos fit within the column */
+    max-height: 100%; /* Prevent content from overflowing */
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
 }
 
 .project-modal .carousel-controls {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    width: 100%;
+    padding: 10px 0;
+    position: relative; /* Keep controls aligned within the carousel */
 }
 
 .project-modal .carousel-controls button {
@@ -742,19 +748,12 @@ body.dark .btn-report:hover {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     transition: background-color 0.3s;
 }
 
 .project-modal .carousel-controls button:hover {
     background-color: rgba(255, 255, 255, 0.5);
-}
-
-.project-modal-column.text {
-    text-align: left;
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-y: auto; /* Enable scrolling if content overflows */
 }
 
 /* Keyframe for expanding animation */
