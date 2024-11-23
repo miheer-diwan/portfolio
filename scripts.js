@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const sideNav = document.querySelector(".side-nav");
+    const sideNav = document.querySelector(".side-line"); // Update from ".side-nav" to ".side-line"
     const sections = document.querySelectorAll(".section");
     const sideLinks = document.querySelectorAll(".side-link");
     const themeSwitch = document.getElementById("theme-switch");
     const body = document.body;
     const cards = document.querySelectorAll(".education-card, .experience-card, .project-card"); // Select all cards
+    const sideCircles = document.querySelectorAll(".side-circle");
 
-    // Show side navigation after scrolling down
+    // Show nav line after scrolling
     window.addEventListener("scroll", () => {
         if (window.scrollY > 100) {
             sideNav.classList.add("visible");
@@ -16,8 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Highlight active link
-    const sideCircles = document.querySelectorAll(".side-circle");
-
     const highlightSection = () => {
         let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
@@ -54,18 +53,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to apply dark mode
     function applyDarkMode() {
-    body.classList.add("dark");
-    document.querySelector("header").classList.add("dark");
-    cards.forEach(card => card.classList.add("dark"));
-    sideLinks.forEach(link => link.classList.add("dark")); // Apply dark mode to side links
+        body.classList.add("dark");
+        document.querySelector("header").classList.add("dark");
+        cards.forEach(card => card.classList.add("dark"));
+        sideLinks.forEach(link => link.classList.add("dark")); // Apply dark mode to side links
     }
 
     // Function to remove dark mode
     function removeDarkMode() {
-    body.classList.remove("dark");
-    document.querySelector("header").classList.remove("dark");
-    cards.forEach(card => card.classList.remove("dark"));
-    sideLinks.forEach(link => link.classList.remove("dark")); // Remove dark mode from side links
+        body.classList.remove("dark");
+        document.querySelector("header").classList.remove("dark");
+        cards.forEach(card => card.classList.remove("dark"));
+        sideLinks.forEach(link => link.classList.remove("dark")); // Remove dark mode from side links
     }
-
 });

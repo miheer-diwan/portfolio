@@ -334,13 +334,21 @@ header.dark nav a.active {
     align-items: center;
     gap: 20px;
     z-index: 1000;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Prevents interaction when hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.side-line.visible {
+    opacity: 1; /* Show line after scrolling */
+    visibility: visible;
 }
 
 .side-line::before {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: -20%; /* Extend the line above */
+    bottom: -20%; /* Extend the line below */
     width: 3px; /* Line thickness */
     background-color: #007bff; /* Light mode color */
     z-index: -1; /* Ensure the line is behind the circles */
@@ -361,8 +369,8 @@ header.dark nav a.active {
     content: attr(data-title); /* Show section name */
     position: absolute;
     top: 50%;
-    left: -120px; /* Adjust based on rectangle width */
-    transform: translateY(-50%);
+    left: 50%; /* Align text box over the line */
+    transform: translate(-50%, -50%);
     padding: 5px 10px;
     background-color: #007bff; /* Light mode color */
     color: #fff;
