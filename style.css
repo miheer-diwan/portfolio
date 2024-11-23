@@ -672,12 +672,14 @@ body.dark .btn-report:hover {
 }
 
 .project-modal-content {
+    display: flex; /* To create two columns */
+    gap: 20px; /* Space between columns */
     background-color: #fff;
     color: #333;
     padding: 20px;
     border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
+    width: 90%; /* Increase modal width */
+    max-width: 800px; /* Larger max width for modal */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
 }
@@ -688,6 +690,71 @@ body.dark .btn-report:hover {
     right: 10px;
     font-size: 24px;
     cursor: pointer;
+}
+
+.project-modal-column {
+    flex: 1; /* Each column takes up equal space */
+}
+
+.project-modal-column.wide {
+    flex: 2; /* Make the image carousel column wider */
+}
+
+/* Carousel inside the modal */
+.project-modal .carousel {
+    width: 100%; /* Full width inside the column */
+    height: 300px; /* Adjust height of the carousel */
+    overflow: hidden;
+}
+
+.project-modal .carousel-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-modal .carousel-slide.active {
+    display: flex;
+}
+
+.project-modal .carousel img, 
+.project-modal .carousel video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-modal .carousel-controls {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.project-modal .carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.project-modal .carousel-controls button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.project-modal-column.text {
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-y: auto; /* Enable scrolling if content overflows */
 }
 
 /* Keyframe for expanding animation */
@@ -701,56 +768,8 @@ body.dark .btn-report:hover {
         opacity: 1;
     }
 }
-/* Carousel */
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-}
 
-.carousel-slide {
-    display: none;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel-slide.active {
-    display: flex;
-}
-
-.carousel img, .carousel video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.carousel-controls {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-}
-
-.carousel-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s;
-}
-
-.carousel-controls button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
+/* Dark mode modal */
 body.dark .project-modal-content {
     background-color: #1e1e1e;
     color: #f4f4f9;

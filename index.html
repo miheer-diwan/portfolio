@@ -156,28 +156,43 @@
                 </div>
             </div>
 
-            <!-- Modal for the Project -->
+            <!-- Project 1 Modal -->
             <div id="project-modal-1" class="project-modal">
                 <div class="project-modal-content">
                     <span class="close-modal">&times;</span>
-                    <h3>Object Detection for Drones</h3>
-                    <div class="carousel">
-                        <div class="carousel-slide active">
-                            <img src="assets/project1.jpg" alt="Slide 1">
-                        </div>
-                        <div class="carousel-slide">
-                            <video autoplay loop muted>
-                                <source src="assets/project1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="carousel-controls">
-                            <button class="carousel-prev">&lt;</button>
-                            <button class="carousel-next">&gt;</button>
+
+                    <!-- Carousel Column -->
+                    <div class="project-modal-column wide">
+                        <div class="carousel">
+                            <div class="carousel-slide active">
+                                <img src="assets/project1.jpg" alt="Slide 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/project2.jpg" alt="Slide 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <video autoplay loop muted>
+                                    <source src="assets/project1.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-prev">&lt;</button>
+                                <button class="carousel-next">&gt;</button>
+                            </div>
                         </div>
                     </div>
-                    <p>Fully implemented real-time object detection using YOLO and ROS2 for autonomous drones.</p>
+
+                    <!-- Text Column -->
+                    <div class="project-modal-column text">
+                        <h3>Object Detection for Drones</h3>
+                        <p>
+                            Fully implemented real-time object detection using YOLO and ROS2 for autonomous drones.
+                            The system was tested in dynamic environments and achieved high accuracy with low latency.
+                        </p>
+                    </div>
                 </div>
             </div>
+
 
             <!-- Deep Learning Projects -->
             <div class="project-card" data-category="dl" data-modal="project-modal-2">
