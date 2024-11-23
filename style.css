@@ -361,6 +361,25 @@ header.dark nav a.active {
     color: #fff;
 }
 
+/* Filter Buttons in Dark Mode */
+body.dark .filter-btn {
+    background-color: #333; /* Dark background for buttons */
+    color: #fff; /* White text for dark mode */
+    border-color: #444; /* Darker border */
+}
+
+body.dark .filter-btn.active {
+    background-color: #ff0000; /* Red for active button in dark mode */
+    color: #fff;
+    font-weight: bold;
+}
+
+body.dark .filter-btn:hover {
+    background-color: #ff0000; /* Red hover for dark mode */
+    color: #fff;
+}
+
+
 /* Side Navigation Line */
 .side-line {
     position: fixed;

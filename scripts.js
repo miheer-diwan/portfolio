@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("header").classList.add("dark");
         cards.forEach(card => card.classList.add("dark"));
         sideLinks.forEach(link => link.classList.add("dark")); // Apply dark mode to side links
+        filterBtns.forEach(btn => btn.classList.add("dark")); // Apply dark mode to filter buttons
     }
 
     // Function to remove dark mode
@@ -67,7 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("header").classList.remove("dark");
         cards.forEach(card => card.classList.remove("dark"));
         sideLinks.forEach(link => link.classList.remove("dark")); // Remove dark mode from side links
+        filterBtns.forEach(btn => btn.classList.remove("dark")); // Remove dark mode from filter buttons
     }
+
 
     // Project Filtering Logic
     filterBtns.forEach(btn => {
