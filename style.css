@@ -322,3 +322,77 @@ header.dark nav a.active {
     background-color: #ff0000; /* Highlight side links in red on hover */
     color: #fff;
 }
+
+/* Side Navigation Line */
+.side-line {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.side-line::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px; /* Line thickness */
+    background-color: #007bff; /* Light mode color */
+    z-index: -1; /* Ensure the line is behind the circles */
+}
+
+/* Side Circles */
+.side-circle {
+    width: 15px;
+    height: 15px;
+    background-color: #007bff; /* Light mode color */
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Expanded Circle (Rectangle with Section Name) */
+.side-circle::after {
+    content: attr(data-title); /* Show section name */
+    position: absolute;
+    top: 50%;
+    left: -120px; /* Adjust based on rectangle width */
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    background-color: #007bff; /* Light mode color */
+    color: #fff;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Highlight Current Section */
+.side-circle.active {
+    width: 100px; /* Expand into rectangle */
+    height: 30px; /* Rectangle height */
+    border-radius: 5px; /* Rectangle shape */
+}
+
+.side-circle.active::after {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Dark Mode Adjustments */
+body.dark .side-line::before {
+    background-color: #ff0000; /* Dark mode line color */
+}
+
+body.dark .side-circle {
+    background-color: #ff0000; /* Dark mode circle color */
+}
+
+body.dark .side-circle.active::after {
+    background-color: #ff0000; /* Dark mode rectangle color */
+}

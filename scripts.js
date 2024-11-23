@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Highlight active link
+    const sideCircles = document.querySelectorAll(".side-circle");
+
     const highlightSection = () => {
         let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
@@ -24,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const sectionBottom = sectionTop + section.offsetHeight;
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                sideLinks.forEach(link => link.classList.remove("active"));
-                sideLinks[index].classList.add("active");
+                sideCircles.forEach(circle => circle.classList.remove("active"));
+                sideCircles[index].classList.add("active");
             }
         });
     };
