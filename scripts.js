@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
     const cards = document.querySelectorAll(".education-card, .experience-card, .project-card"); // Select all cards
     const sideCircles = document.querySelectorAll(".side-circle");
+    const filterBtns = document.querySelectorAll(".filter-btn"); // Project filter buttons
+    const projects = document.querySelectorAll(".project-card"); // Project cards
 
     // Show nav line after scrolling
     window.addEventListener("scroll", () => {
@@ -66,4 +68,30 @@ document.addEventListener("DOMContentLoaded", () => {
         cards.forEach(card => card.classList.remove("dark"));
         sideLinks.forEach(link => link.classList.remove("dark")); // Remove dark mode from side links
     }
+
+    // Project Filtering Logic
+    filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove("active"));
+            // Add active class to the clicked button
+            btn.classList.add("active");
+
+            // Get the filter category
+            const filter = btn.getAttribute("data-filter");
+
+            // Show/Hide projects based on the filter
+            projects.forEach(project => {
+                const category = project.getAttribute("data-category");
+                if (filter === "all" || category === filter) {
+                    project.classList.add("visible");
+                } else {
+                    project.classList.remove("visible");
+                }
+            });
+        });
+    });
+
+    // Initialize: Show all projects by default
+    document.querySelector('.filter-btn[data-filter="all"]').click();
 });

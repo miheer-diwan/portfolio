@@ -129,6 +129,44 @@ html {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Projects Filter Navigation */
+.projects-filter {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.filter-btn {
+    background-color: #f4f4f9;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.filter-btn.active {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Hide Projects by Default */
+.project-card {
+    display: none; /* Hidden by default */
+}
+
+.project-card.visible {
+    display: block; /* Shown when visible */
+}
+
 /* Projects Layout */
 .projects-container {
     display: flex;
