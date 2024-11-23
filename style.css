@@ -634,7 +634,7 @@ body.dark .btn-report:hover {
 
 /* General Image Styles */
 img {
-    border-radius: 8px;
+    border-radius: 4px;
     transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
 }
 
