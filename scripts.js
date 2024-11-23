@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const sideCircles = document.querySelectorAll(".side-circle");
     const filterBtns = document.querySelectorAll(".filter-btn"); // Project filter buttons
     const projects = document.querySelectorAll(".project-card"); // Project cards
+    const modals = document.querySelectorAll(".project-modal"); // Modals for project cards
+    const closeButtons = document.querySelectorAll(".close-modal"); // Close buttons in modals
 
     // Show nav line after scrolling
     window.addEventListener("scroll", () => {
@@ -131,4 +133,20 @@ document.addEventListener("DOMContentLoaded", () => {
         currentSlide = (currentSlide + 1) % slides.length;
         updateSlide(currentSlide);
     }, 5000);
+
+    // --- Modal Logic ---
+    projects.forEach(card => {
+        card.addEventListener("click", () => {
+            const modalId = card.getAttribute("data-modal");
+            const modal = document.getElementById(modalId);
+            if (modal) modal.classList.add("active");
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const modal = button.closest(".project-modal");
+            if (modal) modal.classList.remove("active");
+        });
+    });
 });
