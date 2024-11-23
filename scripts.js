@@ -134,8 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
         updateSlide(currentSlide);
     }, 5000);
 
-    // --- Modal Logic ---
-    projects.forEach(card => {
+    // Open modal
+    projectCards.forEach(card => {
         card.addEventListener("click", () => {
             const modalId = card.getAttribute("data-modal");
             const modal = document.getElementById(modalId);
@@ -143,10 +143,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Close modal
     closeButtons.forEach(button => {
         button.addEventListener("click", () => {
             const modal = button.closest(".project-modal");
             if (modal) modal.classList.remove("active");
+        });
+    });
+
+    // Close modal on outside click
+    modals.forEach(modal => {
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("active");
+            }
         });
     });
 });
