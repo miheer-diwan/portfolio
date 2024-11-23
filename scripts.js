@@ -31,6 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 sideCircles[index].classList.add("active");
             }
         });
+
+        // Highlight Contact Tab if we're at the bottom of the page
+        if ((window.innerHeight + scrollPosition) >= document.body.offsetHeight) {
+            sideCircles.forEach(circle => circle.classList.remove("active"));
+            sideCircles[sideCircles.length - 1].classList.add("active");
+        }
     };
 
     window.addEventListener("scroll", highlightSection);
