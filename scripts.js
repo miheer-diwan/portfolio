@@ -2,8 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const sideNav = document.querySelector(".side-nav");
     const sections = document.querySelectorAll(".section");
     const sideLinks = document.querySelectorAll(".side-link");
-    const themeSwitch = document.getElementById("theme-switch"); // New: Access the theme toggle
+    const themeSwitch = document.getElementById("theme-switch");
     const body = document.body;
+    const cards = document.querySelectorAll(".education-card, .experience-card, .project-card"); // Select all cards
 
     // Show side navigation after scrolling down
     window.addEventListener("scroll", () => {
@@ -31,22 +32,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", highlightSection);
 
-    // New: Light/Dark Mode Toggle
     // Load saved theme preference from localStorage
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
-        body.classList.add("dark");
-        themeSwitch.checked = true; // Set toggle to dark mode
+        applyDarkMode();
+        themeSwitch.checked = true;
     }
 
     // Add event listener to the theme switch
     themeSwitch.addEventListener("change", () => {
         if (themeSwitch.checked) {
-            body.classList.add("dark"); // Apply dark mode
-            localStorage.setItem("theme", "dark"); // Save preference
+            applyDarkMode();
+            localStorage.setItem("theme", "dark");
         } else {
-            body.classList.remove("dark"); // Revert to light mode
-            localStorage.setItem("theme", "light"); // Save preference
+            removeDarkMode();
+            localStorage.setItem("theme", "light");
         }
     });
+
+    // Function to apply dark mode
+    function applyDarkMode() {
+        body.classList.add("dark");
+        document.querySelector("header").classList.add("dark");
+        cards.forEach(card => card.classList.add("dark"));
+    }
+
+    // Function to remove dark mode
+    function removeDarkMode() {
+        body.classList.remove("dark");
+        document.querySelector("header").classList.remove("dark");
+        cards.forEach(card => card.classList.remove("dark"));
+    }
 });

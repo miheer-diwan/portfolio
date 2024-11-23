@@ -260,6 +260,7 @@ input:checked + .theme-label::after {
     transform: translateX(25px);
 }
 
+/* Dark Mode Styles */
 body.dark {
     background-color: #121212;
     color: #f4f4f9;
@@ -277,12 +278,12 @@ header.dark nav a:hover {
     color: #ddd;
 }
 
-.project-card.dark {
+.education-card.dark, .experience-card.dark, .project-card.dark {
     background-color: #1e1e1e;
     color: #f4f4f9;
     border-color: #333;
 }
 
-.project-card.dark:hover {
+.education-card.dark:hover, .experience-card.dark:hover, .project-card.dark:hover {
     box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
 }
