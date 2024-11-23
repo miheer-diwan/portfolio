@@ -52,15 +52,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to apply dark mode
     function applyDarkMode() {
-        body.classList.add("dark");
-        document.querySelector("header").classList.add("dark");
-        cards.forEach(card => card.classList.add("dark"));
-    }
+    body.classList.add("dark");
+    document.querySelector("header").classList.add("dark");
+    cards.forEach(card => card.classList.add("dark"));
+    sideLinks.forEach(link => link.classList.add("dark")); // Apply dark mode to side links
+    }   
 
     // Function to remove dark mode
     function removeDarkMode() {
-        body.classList.remove("dark");
-        document.querySelector("header").classList.remove("dark");
-        cards.forEach(card => card.classList.remove("dark"));
+    body.classList.remove("dark");
+    document.querySelector("header").classList.remove("dark");
+    cards.forEach(card => card.classList.remove("dark"));
+    sideLinks.forEach(link => link.classList.remove("dark")); // Remove dark mode from side links
     }
+
 });

@@ -288,3 +288,26 @@ header.dark nav a:hover {
 .education-card.dark:hover, .experience-card.dark:hover, .project-card.dark:hover {
     box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
 }
+
+/* Dark Mode Styles for Nav Bar */
+header.dark {
+    background-color: #000; /* Change nav bar to black */
+}
+
+header.dark nav a {
+    color: #fff; /* Keep nav bar text white */
+}
+
+header.dark nav a:hover {
+    color: #ff0000; /* Change hover color to red */
+}
+
+.side-link.dark {
+    background: #000; /* Change side navigation background to black */
+    color: #fff; /* Change side navigation text color to white */
+}
+
+.side-link.dark:hover {
+    background-color: #ff0000; /* Highlight side links in red on hover */
+    color: #fff;
+}
