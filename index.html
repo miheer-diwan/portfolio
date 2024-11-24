@@ -120,7 +120,6 @@
         </div>
     </section>
 
-    <!-- Projects-->
     <section id="projects" class="section">
         <h2>Projects</h2>
 
@@ -136,7 +135,7 @@
         <!-- Projects Grid -->
         <div class="projects-container">
             <!-- Computer Vision Projects -->
-            <div class="project-card" data-category="cv dl" data-modal="project-modal-1">
+            <div class="project-card" data-category="cv">
                 <img src="assets/project1.jpg" alt="Computer Vision Project 1">
                 <div class="project-info">
                     <h4>Object Detection for Drones</h4>
@@ -157,35 +156,74 @@
                 </div>
             </div>
 
-            <!-- Project 1 Modal -->
+            <!-- Project Modal -->
             <div id="project-modal-1" class="project-modal">
-                <div class="project-modal-content">
-                    <!-- Carousel Column -->
-                    <div class="project-modal-column wide">
-                        <div class="carousel">
-                            <div class="carousel-slide active">
-                                <img src="image1.jpg" alt="Image 1">
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="image2.jpg" alt="Image 2">
-                            </div>
-                            <div class="carousel-slide">
-                                <video autoplay loop muted>
-                                    <source src="video.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="carousel-controls">
-                                <button class="carousel-prev">&lt;</button>
-                                <button class="carousel-next">&gt;</button>
-                            </div>
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="carousel">
+                        <div class="carousel-slide active">
+                            <img src="assets/project1.jpg" alt="Slide 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/project2.jpg" alt="Slide 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <video autoplay loop muted>
+                                <source src="assets/project1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-prev">&lt;</button>
+                            <button class="carousel-next">&gt;</button>
                         </div>
                     </div>
-                    <!-- Text Content Column -->
-                    <div class="project-modal-column text">
-                        <h3>Project Title</h3>
-                        <p>Expanded description of the project goes here.</p>
+                    <div class="expanded-description">
+                        <h3>Object Detection for Drones</h3>
+                        <p>
+                            Fully implemented real-time object detection using YOLO and ROS2 for autonomous drones. The system was tested in dynamic environments and achieved high accuracy with low latency.
+                        </p>
                     </div>
-                    <span class="close-modal">&times;</span>
+                </div>
+            </div>
+
+            <!-- Deep Learning Projects -->
+            <div class="project-card" data-category="dl">
+                <img src="assets/project1.jpg" alt="Deep Learning Project 1">
+                <div class="project-info">
+                    <h4>Path Planning with Deep RL</h4>
+                    <p>Designed a reinforcement learning model for robot navigation in dynamic environments.</p>
+                    <video autoplay loop muted>
+                        <source src="assets/project1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+
+            <!-- Simulation Projects -->
+            <div class="project-card" data-category="simulation">
+                <img src="assets/project1.jpg" alt="Simulation Project 1">
+                <div class="project-info">
+                    <h4>Gazebo Simulation</h4>
+                    <p>Simulated a robot navigating multiple waypoints in Gazebo using ROS2 and Nav2.</p>
+                    <video autoplay loop muted>
+                        <source src="assets/project1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+
+            <!-- Navigation Projects -->
+            <div class="project-card" data-category="navigation">
+                <img src="assets/project1.jpg" alt="Navigation Project 1">
+                <div class="project-info">
+                    <h4>LiDAR Navigation</h4>
+                    <p>Developed a LiDAR-based navigation system for autonomous ground vehicles.</p>
+                    <video autoplay loop muted>
+                        <source src="assets/project1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
 
