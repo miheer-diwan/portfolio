@@ -60,18 +60,28 @@
         <div class="carousel-slide">
             <img src="assets/cover3.png" alt="Cover Image 3">
         </div>
+        <div class="carousel-message">
+            <h1>Welcome to My Robotics Portfolio</h1>
+            <p>Explore my work in Robotics, Perception, AI, and Autonomous Systems.</p>
+        </div>
         <div class="carousel-controls">
             <button class="carousel-prev">&lt;</button>
             <button class="carousel-next">&gt;</button>
         </div>
     </div>
 
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p class="about-description">
-            Hi, I'm Miheer, a Robotics Engineer with expertise in perception, AI, and autonomous systems. 
-            Welcome to my portfolio!
-        </p>
+    <section id="about" class="section overlay">
+        <div class="about-container">
+            <div class="about-left">
+                <h2>About Me</h2>
+                <p>
+                    Hi, I'm Miheer, a Robotics Engineer with a passion for creating intelligent systems that bridge perception, AI, and robotics. I specialize in computer vision, machine learning, and autonomous navigation. My journey in robotics has been fueled by a curiosity to push boundaries and build systems that tackle real-world challenges.
+                </p>
+            </div>
+            <div class="about-right">
+                <img src="assets/Miheer.jpg" alt="Miheer Diwan">
+            </div>
+        </div>
     </section>
 
     <section id="education" class="section">
@@ -142,7 +152,18 @@
         <div class="projects-container">
             <!-- Computer Vision Projects -->
             <div class="project-card" data-category="cv">
-                <img src="assets/project1.jpg" alt="Computer Vision Project 1">
+                <div class="media-container">
+                    <div class="project_carousel">
+                        <img src="assets/chip.jpg" alt="Slide 1">
+                        <img src="assets/kalman.png" alt="Slide 2">
+                        <img src="assets/mih.png" alt="Slide 3">
+                    </div>
+                    <!-- Hover Image/Video -->
+                    <video class="hover-media" muted>
+                        <source src="assets/perception.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
                 <div class="project-info">
                     <h4>Object Detection for Drones</h4>
                     <p>Implemented real-time object detection using YOLO and ROS2 for autonomous drones.</p>
@@ -174,8 +195,19 @@
             </div>
 
             <!-- Deep Learning Projects -->
-            <div class="project-card" data-category="dl">
-                <img src="assets/project1.jpg" alt="Deep Learning Project 1">
+            <div class="project-card" data-category="dl cv">
+                <div class="media-container">
+                    <div class="project_carousel">
+                        <img src="assets/chip.jpg" alt="Slide 1">
+                        <img src="assets/kalman.png" alt="Slide 2">
+                        <img src="assets/mih.png" alt="Slide 3">
+                    </div>
+                    <!-- Hover Image/Video -->
+                    <video class="hover-media" muted>
+                        <source src="assets/perception.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
                 <div class="project-info">
                     <h4>Path Planning with Deep RL</h4>
                     <p>Designed a reinforcement learning model for robot navigation in dynamic environments.</p>
@@ -206,7 +238,18 @@
 
             <!-- Simulation Projects -->
             <div class="project-card" data-category="simulation">
-                <img src="assets/project1.jpg" alt="Simulation Project 1">
+                <div class="media-container">
+                    <div class="project_carousel">
+                        <img src="assets/chip.jpg" alt="Slide 1">
+                        <img src="assets/kalman.png" alt="Slide 2">
+                        <img src="assets/mih.png" alt="Slide 3">
+                    </div>
+                    <!-- Hover Image/Video -->
+                    <video class="hover-media" muted>
+                        <source src="assets/perception.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
                 <div class="project-info">
                     <h4>Gazebo Simulation</h4>
                     <p>Simulated a robot navigating multiple waypoints in Gazebo using ROS2 and Nav2.</p>
@@ -237,7 +280,18 @@
 
             <!-- Navigation Projects -->
             <div class="project-card" data-category="navigation">
-                <img src="assets/project1.jpg" alt="Navigation Project 1">
+                <div class="media-container">
+                    <div class="project_carousel">
+                        <img src="assets/chip.jpg" alt="Slide 1">
+                        <img src="assets/kalman.png" alt="Slide 2">
+                        <img src="assets/mih.png" alt="Slide 3">
+                    </div>
+                    <!-- Hover Image/Video -->
+                    <video class="hover-media" muted>
+                        <source src="assets/perception.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
                 <div class="project-info">
                     <h4>LiDAR Navigation</h4>
                     <p>Developed a LiDAR-based navigation system for autonomous ground vehicles.</p>
