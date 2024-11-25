@@ -48,20 +48,39 @@ header nav {
     flex-shrink: 0; /* Prevent shrinking of the toggle */
 }
 
-/* Navigation Links */
+/* Header Navigation */
 header nav a {
+    position: relative; /* Set relative position for pseudo-element */
     color: #333; /* Text color for navigation links */
     text-decoration: none; /* Remove underline */
     font-size: 16px; /* Adjust font size */
-    padding: 5px 10px; /* Add padding for clickable area */
-    border-radius: 5px; /* Add rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+    padding: 5px 15px; /* Add padding for clickable area */
+    border-radius: none; /* Add subtle rounding for buttons */
+    z-index: 1; /* Ensure text appears above the hover background */
+}
+
+header nav a::before {
+    content: ""; /* Required for pseudo-element */
+    position: absolute;
+    top: -8px; /* Increase height by extending upwards */
+    left: -4px; /* Increase width by extending to the left */
+    right: -4px; /* Increase width by extending to the right */
+    bottom: -8px; /* Increase height by extending downwards */
+    background-color: rgba(0, 0, 0, 0.1); /* Hover background color */
+    border-radius: none; /* Slight rounding for the hover background */
+    z-index: -1; /* Place below the text */
+    opacity: 0; /* Initially hidden */
+}
+
+header nav a:hover::before {
+    opacity: 1; /* Show background on hover */
+    transform: scale(1.1); /* Increase the size of the hover background */
 }
 
 header nav a:hover {
-    background-color: #f0f0f0; /* Light hover background */
-    color: #007bff; /* Highlight text color */
+    color: #000000; /* Highlight text color on hover */
 }
+
 
 /* Adjust Section Spacing for Fixed Header */
 .section {
@@ -220,8 +239,8 @@ header nav a:hover {
  
  .filter-btn {
     background-color: #f4f4f9;
-    color: #333;
-    border: 1px solid #ddd;
+    color: #000000;
+    border: 1px solid #000000;
     border-radius: 25px;
     padding: 10px 20px;
     margin: 5px;
@@ -231,7 +250,7 @@ header nav a:hover {
  
  
  .filter-btn:hover {
-    background-color: #007bff;
+    background-color: rgba(0, 120, 241, 0.6);
     color: #fff;
     transform: scale(1.1);
  }
@@ -417,7 +436,7 @@ header nav a:hover {
  
  
  header.dark {
-    background-color: rgba(0, 0, 0, 0.1); /* Dark translucent background */
+    background-color: rgba(50, 50, 50, 0.1); /* Dark translucent background */
     box-shadow: 0 4px 8px rgba(100, 100, 100, 0.1); /* Soft white shadow */
  }
  
@@ -494,7 +513,7 @@ header nav a:hover {
  body.dark .filter-btn {
     background-color: #333; /* Dark background for buttons */
     color: #fff; /* White text for dark mode */
-    border-color: #444; /* Darker border */
+    border-color: #838383; /* Darker border */
  }
  
  
@@ -506,7 +525,7 @@ header nav a:hover {
  
  
  body.dark .filter-btn:hover {
-    background-color: #ff0000; /* Red hover for dark mode */
+    background-color: #ff000042; /* Red hover for dark mode */
     color: #fff;
  }
  
@@ -618,6 +637,7 @@ header nav a:hover {
  .project-buttons {
     margin-top: 10px;
     display: flex;
+    justify-content: center; /* Center the buttons */
     gap: 10px; /* Space between buttons */
  }
  
@@ -880,7 +900,7 @@ header nav a:hover {
 
 /* GitHub Button in Dark Mode */
 body.dark .btn-github {
-    background-color: #fff; /* White background */
+    background-color: #ffffffeb; /* White background */
     color: #333; /* Dark text */
     border: 1px solid #ddd; /* Optional: Border for contrast */
 }
@@ -895,13 +915,15 @@ body.dark .btn-github:hover {
     margin: 10px 0; /* Space around skills section */
     display: flex;
     flex-wrap: wrap; /* Allow wrapping for multiple skills */
-    gap: 10px; /* Space between skill buttons */
+    gap: 5px; /* Space between skill buttons */
+    justify-content: center; /* Center the skills horizontally */
+    margin-bottom: 20px; /* Add space below skills and above GitHub/Report buttons */
 }
 
 .skill-btn {
     background-color: #ffffff; /* Primary color */
     color: #000000; /* Text color */
-    border: box-border; /* Remove borders */
+    border: 1px solid #000000;/* Remove borders */
     border-radius: 5px; /* Rounded buttons */
     padding: 5px 15px; /* Adjust padding for better appearance */
     font-size: 14px; /* Font size */
@@ -909,7 +931,34 @@ body.dark .btn-github:hover {
 }
 
 body.dark .skill-btn {
-    background-color: #444; /* Dark background for skills buttons */
+    background-color: #282828; /* Dark background for skills buttons */
     color: #fff; /* White text for dark mode */
-    border: 1px solid #666; /* Optional: Add border for better visibility */
+    border: 2px solid #666666; /* Optional: Add border for better visibility */
+}
+
+/* Header Navigation for Dark Mode */
+header.dark nav a {
+    color: #f4f4f9; /* Light text color for navigation links in dark mode */
+}
+
+header.dark nav a::before {
+    content: ""; /* Required for pseudo-element */
+    position: absolute;
+    top: -8px; /* Increase height by extending upwards */
+    left: -4px; /* Increase width by extending to the left */
+    right: -4px; /* Increase width by extending to the right */
+    bottom: -8px; /* Increase height by extending downwards */
+    background-color: rgba(255, 255, 255, 0.2); /* Hover background color (light gray in dark mode) */
+    z-index: -1; /* Place below the text */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+header.dark nav a:hover::before {
+    opacity: 1; /* Show background on hover */
+    transform: scale(1.1); /* Increase the size of the hover background */
+}
+
+header.dark nav a:hover {
+    color: #ffffff; /* Highlight text color on hover */
 }
