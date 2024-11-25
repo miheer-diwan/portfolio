@@ -6,18 +6,19 @@
     <title>Miheer's Robotics Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
 </head>
 <body>
 
-    <!-- Light/Dark Mode Toggle
+    <!-- Light/Dark Mode Toggle -->
+    <!--
     <div class="theme-toggle">
         <input type="checkbox" id="theme-switch">
         <label for="theme-switch" class="theme-label">
             <span class="sun">☀️</span>
             <span class="moon">🌙</span>
         </label>
-    </div> -->
+    </div>
+    -->
 
     <!-- Side Navigation -->
     <div class="side-line">
@@ -36,7 +37,6 @@
             <a href="#experience"><b>Experience</b></a>
             <a href="#projects"><b>Projects</b></a>
             <a href="#contact"><b>Contact</b></a>
-            <a href="#contact"><b>CAD</b></a>
             <div class="theme-toggle">
                 <input type="checkbox" id="theme-switch">
                 <label for="theme-switch" class="theme-label">
@@ -49,8 +49,8 @@
 
     <div id="cover-page" class="carousel">
         <div class="carousel-slide active">
-            <video autoplay loop muted>
-                <source src="assets/DR_drone.mp4" type="video/mp4">
+            <video autoplay muted>
+                <source src="assets/traj_ortho_view.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -61,8 +61,22 @@
             <img src="assets/cover3.png" alt="Cover Image 3">
         </div>
         <div class="carousel-message">
-            <h1>Welcome to My Robotics Portfolio</h1>
-            <p>Explore my work in Robotics, Perception, AI, and Autonomous Systems.</p>
+            <h1>Hi, I'm Miheer Diwan</h1>
+            <h3>Robotics Engineer</h3>
+            <div class="carousel-buttons">
+                <a href="resume-link.pdf" target="_blank">
+                    <i class="fas fa-file-alt"></i> Resume
+                </a>
+                <a href="https://github.com/miheer-diwan" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/miheer-diwan/" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://instagram.com/your-instagram" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
         </div>
         <div class="carousel-controls">
             <button class="carousel-prev">&lt;</button>
@@ -73,7 +87,7 @@
     <section id="about" class="section overlay">
         <div class="about-container">
             <div class="about-left">
-                <h2>About Me</h2>
+                <h1>About Me</h1>
                 <p>
                     Hi, I'm Miheer, a Robotics Engineer with a passion for creating intelligent systems that bridge perception, AI, and robotics. I specialize in computer vision, machine learning, and autonomous navigation. My journey in robotics has been fueled by a curiosity to push boundaries and build systems that tackle real-world challenges.
                 </p>
@@ -85,7 +99,7 @@
     </section>
 
     <section id="education" class="section">
-        <h2>Education</h2>
+        <h1>Education</h1>
         <div class="education-container">
             <div class="education-card">
                 <div class="education-content">
@@ -103,7 +117,7 @@
                     <div class="education-description">
                         <h3>NMIMS Mukesh Patel School of Technology Management & Engineering</h3>
                         <p><strong>Bachelor's in Mechatronics Engineering</strong>, 2022</p>
-                        <p>Coursework: </p>
+                        <p><strong>Coursework:</strong> [Add coursework details here]</p>
                     </div>
                 </div>
             </div>
@@ -167,16 +181,9 @@
                 <div class="project-info">
                     <h4>Object Detection for Drones</h4>
                     <p>Implemented real-time object detection using YOLO and ROS2 for autonomous drones.</p>
-                    <!-- <video autoplay loop muted>
-                        <source src="assets/project1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video> -->
 
                     <!-- Skills Buttons -->
                     <div class="project-skills">
-                        <button class="skill-btn">YOLO</button>
-                        <button class="skill-btn">ROS2</button>
-                        <button class="skill-btn">Python</button>
                         <button class="skill-btn">YOLO</button>
                         <button class="skill-btn">ROS2</button>
                         <button class="skill-btn">Python</button>
@@ -211,10 +218,6 @@
                 <div class="project-info">
                     <h4>Path Planning with Deep RL</h4>
                     <p>Designed a reinforcement learning model for robot navigation in dynamic environments.</p>
-                    <!-- <video autoplay loop muted>
-                        <source src="assets/project1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video> -->
 
                     <!-- Skills Buttons -->
                     <div class="project-skills">
@@ -234,7 +237,6 @@
                     </div>
                 </div>
             </div>
-
 
             <!-- Simulation Projects -->
             <div class="project-card" data-category="simulation">
@@ -253,10 +255,6 @@
                 <div class="project-info">
                     <h4>Gazebo Simulation</h4>
                     <p>Simulated a robot navigating multiple waypoints in Gazebo using ROS2 and Nav2.</p>
-                    <!-- <video autoplay loop muted>
-                        <source src="assets/project1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video> -->
 
                     <!-- Skills Buttons -->
                     <div class="project-skills">
@@ -276,7 +274,6 @@
                     </div>
                 </div>
             </div>
-
 
             <!-- Navigation Projects -->
             <div class="project-card" data-category="navigation">
@@ -295,11 +292,6 @@
                 <div class="project-info">
                     <h4>LiDAR Navigation</h4>
                     <p>Developed a LiDAR-based navigation system for autonomous ground vehicles.</p>
-                    <!-- <video autoplay loop muted>
-                        <source src="assets/project1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video> -->
-
 
                     <!-- Skills Buttons -->
                     <div class="project-skills">
@@ -319,7 +311,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -331,6 +322,7 @@
     <footer>
         <p>&copy; 2024 Miheer Diwan. All rights reserved.</p>
     </footer>
+
     <script src="scripts.js"></script>
 </body>
 </html>

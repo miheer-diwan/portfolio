@@ -1,99 +1,165 @@
-/* General Styles */
+/* ========== General Styles ========== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #b1b1b152;
     color: #333;
 }
 
-/* Header Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========== Header Styles ========== */
 header {
-    position: fixed; /* Fix header at the top */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Full width */
-    background-color: rgba(255, 255, 255, 0.7); /* White and translucent */
-    color: #333; /* Text color */
-    padding: 10px 20px; /* Adjust padding for spacing */
-    display: flex; /* Flexbox for alignment */
-    align-items: center; /* Vertically align content */
-    justify-content: space-between; /* Space between title and nav items */
-    z-index: 1000; /* Ensure it appears above other elements */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Header Title */
 header h1 {
-    font-size: 1.5rem; /* Adjust font size */
-    margin: 0; /* Remove default margin */
-    flex: 1; /* Push nav items to the right */
-    text-align: left; /* Align title to the left */
+    font-size: 1.5rem;
+    margin: 0;
+    flex: 1;
+    text-align: left;
 }
 
-/* Header Navigation */
 header nav {
-    display: flex; /* Flexbox for nav items */
-    align-items: center; /* Vertically align buttons */
-    gap: 15px; /* Space between nav links */
-    flex: 1; /* Allow space between title and theme toggle */
-    justify-content: flex-end; /* Right-align nav buttons */
-    margin-right: 120px; /* Add space for the theme toggle */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    justify-content: flex-end;
+    margin-right: 120px;
 }
 
-/* Light/Dark Mode Toggle */
-.theme-toggle {
-    margin-left: 15px; /* Space between nav links and toggle */
-    position: relative; /* Ensure alignment within header */
-    flex-shrink: 0; /* Prevent shrinking of the toggle */
-}
-
-/* Header Navigation */
 header nav a {
-    position: relative; /* Set relative position for pseudo-element */
-    color: #333; /* Text color for navigation links */
-    text-decoration: none; /* Remove underline */
-    font-size: 16px; /* Adjust font size */
-    padding: 5px 15px; /* Add padding for clickable area */
-    border-radius: none; /* Add subtle rounding for buttons */
-    z-index: 1; /* Ensure text appears above the hover background */
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 15px;
+    z-index: 1;
 }
 
 header nav a::before {
-    content: ""; /* Required for pseudo-element */
+    content: "";
     position: absolute;
-    top: -9px; /* Increase height by extending upwards */
-    left: -4px; /* Increase width by extending to the left */
-    right: -4px; /* Increase width by extending to the right */
-    bottom: -9px; /* Increase height by extending downwards */
-    background-color: rgba(0, 0, 0, 0.1); /* Hover background color */
-    border-radius: none; /* Slight rounding for the hover background */
-    z-index: -1; /* Place below the text */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
-
+    top: -10px;
+    left: -6px;
+    right: -6px;
+    bottom: -10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 header nav a:hover::before {
-    opacity: 1; /* Show background on hover */
-    transform: scale(1.3); /* Increase the size of the hover background */
+    opacity: 1;
+    transform: scale(1.0);
 }
 
 header nav a:hover {
-    color: #000000; /* Highlight text color on hover */
+    color: #000000;
 }
 
+/* ========== Light/Dark Mode Toggle ========== */
+.theme-toggle {
+    margin-left: 15px;
+    position: relative;
+    flex-shrink: 0;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/* Adjust Section Spacing for Fixed Header */
+.theme-toggle input {
+    display: none;
+}
+
+.theme-label {
+    width: 60px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.theme-label .sun,
+.theme-label .moon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.theme-label .sun {
+    left: 5px;
+}
+
+.theme-label .moon {
+    right: 5px;
+}
+
+.theme-label::after {
+    content: "";
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+input:checked + .theme-label {
+    background-color: #333;
+}
+
+input:checked + .theme-label::after {
+    transform: translateX(30px);
+}
+
+input:checked + .theme-label .sun {
+    color: #fff;
+}
+
+input:checked + .theme-label .moon {
+    color: #fff;
+}
+
+/* ========== Section Styles ========== */
 .section {
-    margin-top: 80px; /* Prevent content overlap with fixed header */
+    margin-top: 80px;
     padding: 50px;
     text-align: center;
 }
 
-
- /* Side Navigation */
- .side-nav {
+/* ========== Side Navigation Styles ========== */
+.side-nav {
     position: fixed;
     top: 50%;
     right: 10px;
@@ -104,15 +170,13 @@ header nav a:hover {
     z-index: 1000;
     opacity: 0;
     transition: opacity 0.3s;
- }
- 
- 
- .side-nav.visible {
+}
+
+.side-nav.visible {
     opacity: 1;
- }
- 
- 
- .side-link {
+}
+
+.side-link {
     display: block;
     text-decoration: none;
     color: #333;
@@ -123,77 +187,25 @@ header nav a:hover {
     font-size: 14px;
     text-align: center;
     transition: background-color 0.3s, transform 0.3s;
- }
- 
- 
- .side-link:hover {
+}
+
+.side-link:hover {
     background-color: #007bff;
     color: #fff;
     transform: scale(1.1);
- }
- 
- 
- .side-link.active {
+}
+
+.side-link.active {
     background-color: #0056b3;
     color: #fff;
     font-weight: bold;
- }
- 
- 
- /* Smooth Scrolling */
- html {
-    scroll-behavior: smooth;
- }
- 
- 
- /* Education and Experience Cards (One Below the Other) */
- .education-card, .experience-card {
-    width: 100%;
-    max-width: 600px;
-    margin: 10px auto;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid #ddd;
-    transition: box-shadow 0.3s;
- }
+}
 
- 
- /* Education and Experience Layout */
- .education-container, .experience-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
- }
- 
- 
- /* Two-Column Layout for Education and Experience */
- .education-content, .experience-content {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Space between image and description */
- }
- 
- 
- .education-content img, .experience-content img {
-    width: 150px; /* Adjust width as needed */
-    height: auto;
-    border-radius: 10px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
- }
- 
- 
- .education-description, .experience-description {
-    text-align: justify; /* Justify the text */
-    flex: 1; /* Take the remaining space */
- }
- 
- 
- .education-card, .experience-card {
+/* ========== Education and Experience Styles ========== */
+.education-card,
+.experience-card {
     width: 100%;
-    max-width: 800px; /* Optional: Limit maximum width */
+    max-width: 800px;
     margin: 10px auto;
     background-color: #fff;
     border-radius: 10px;
@@ -201,11 +213,38 @@ header nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 1px solid #ddd;
     transition: transform 0.3s, box-shadow 0.3s;
- }
- 
- 
- /* Project Cards */
- .project-card {
+}
+
+.education-container,
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.education-content,
+.experience-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.education-content img,
+.experience-content img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.education-description,
+.experience-description {
+    text-align: justify;
+    flex: 1;
+}
+
+/* ========== Project Card Styles ========== */
+.project-card {
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -214,32 +253,35 @@ header nav a:hover {
     max-width: 400px;
     width: 100%;
     transition: transform 0.3s, box-shadow 0.3s;
- }
- 
- 
- .project-card img, .project-card video {
+}
+
+.project-card img,
+.project-card video {
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
- 
- 
- }
- 
- 
- .project-card:hover {
+}
+
+.project-card:hover {
     transform: scale(1.02);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
- }
- 
- 
- /* Projects Filter Navigation */
- .projects-filter {
+}
+
+.project-card img {
+    transition: box-shadow 0.3s ease;
+}
+
+.project-card img:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== Projects Filter Navigation ========== */
+.projects-filter {
     margin: 20px 0;
     text-align: center;
- }
- 
- 
- .filter-btn {
+}
+
+.filter-btn {
     background-color: #f4f4f9;
     color: #000000;
     border: 1px solid #000000;
@@ -248,294 +290,236 @@ header nav a:hover {
     margin: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
- }
- 
- 
- .filter-btn:hover {
+}
+
+.filter-btn:hover {
     background-color: rgba(0, 120, 241, 0.6);
     color: #fff;
     transform: scale(1.1);
- }
- 
- 
- .filter-btn.active {
+}
+
+.filter-btn.active {
     background-color: #007bff;
     color: #fff;
     font-weight: bold;
- }
- 
- 
- /* Hide Projects by Default */
- .project-card {
-    display: none; /* Hidden by default */
- }
- 
- 
- .project-card.visible {
-    display: block; /* Shown when visible */
- }
- 
- 
- /* Projects Layout */
- .projects-container {
+}
+
+/* Hide Projects by Default */
+.project-card {
+    display: none;
+}
+
+.project-card.visible {
+    display: block;
+}
+
+/* Projects Layout */
+.projects-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
- }
- 
- 
- .projects-category {
+}
+
+.projects-category {
     margin-bottom: 40px;
- }
- 
- 
- /* Responsive Design */
- @media (max-width: 1024px) {
-    header nav a {
-        font-size: 16px;
-        margin: 0 10px;
-    }
- }
- 
- 
- @media (max-width: 768px) {
-    header {
-        padding: 15px;
-    }
- 
- 
-    header h1 {
-        font-size: 1.5rem;
-    }
- 
- 
-    .side-nav {
-        display: none;
-    }
- 
- 
-    .education-card, .experience-card, .project-card {
-        width: 90%;
-        margin: auto;
-    }
- }
- 
- 
- @media (max-width: 480px) {
-    header h1 {
-        font-size: 1.2rem;
-    }
- 
- 
-    header nav {
-        flex-direction: column;
-        align-items: center;
-    }
- 
- 
-    header nav a {
-        margin: 5px 0;
-    }
- 
- 
-    .education-card, .experience-card {
-        padding: 15px;
-    }
- }
- 
- 
- /* New Code for Light/Dark Mode Toggle */
- .theme-toggle {
-    position: fixed;
-    top: 10px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
- 
- 
- .theme-toggle input {
-    display: none;
- }
- 
- 
- .theme-label {
-    width: 60px; /* Elliptical shape width */
-    height: 30px; /* Elliptical shape height */
-    background-color: #ddd;
-    border-radius: 15px;
+}
+
+/* ========== Cover Page Carousel ========== */
+#cover-page {
     position: relative;
-    cursor: pointer;
-    overflow: hidden; /* Hide parts outside the ellipse */
-    transition: background-color 0.3s ease;
- }
- 
- 
- .theme-label .sun,
- .theme-label .moon {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Cover Page Message Styling */
+.carousel-message {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: #333;
-    transition: all 0.3s ease;
- }
- 
- 
- .theme-label .sun {
-    left: 5px; /* Position sun on the left */
- }
- 
- 
- .theme-label .moon {
-    right: 5px; /* Position moon on the right */
- }
- 
- 
- .theme-label::after {
-    content: "";
-    width: 26px; /* Size of the white round button */
-    height: 26px;
-    background-color: #fff;
-    border-radius: 50%;
+    top: 50%; /* Center vertically */
+    left: 10%; /* Position slightly left */
+    transform: translateY(-50%); /* Adjust vertical centering */
+    text-align: left; /* Align text to the left */
+    color: rgb(0, 0, 0); /* White text color */
+    font-size: 1.5rem; /* Adjust font size */
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #fff, 1px 1px 0 #fff; /* Black outline */
+    z-index: 10; /* Ensure it appears above other elements */
+    background-color: rgba(0, 0, 0, 0.0); /* Optional: Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px; /* Add rounded corners */
+    max-width: 30%; /* Optional: Limit the width of the message */
+}
+
+.carousel-message h1,
+.carousel-message p {
+    margin: -30px 0; /* Reduce vertical spacing between lines */
+}
+
+/* Buttons Below Message */
+.carousel-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px; /* Space above buttons */
+}
+
+.carousel-buttons a {
+    display: inline-block;
+    padding: 8px 20px; /* Adjust padding for better proportions */
+    font-size: 1.0rem; /* Adjust font size */
+    font-weight: normal; /* Remove bold font */
+    color: #000000; /* White text */
+    text-decoration: none; /* Remove underline */
+    text-shadow: none;
+    background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+    border: 1px solid #000000; /* White border for subtle design */
+    border-radius: 25px; /* Fully rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.carousel-buttons a:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #000; /* Black text on hover */
+    transform: scale(1.08); /* Slight zoom on hover */
+    border-color: #000; /* Black border on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-slide {
     position: absolute;
-    top: 2px;
-    left: 2px; /* Starting position for light mode */
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 2; /* Ensure the button is above the icons */
- }
- 
- 
- input:checked + .theme-label {
-    background-color: #333; /* Dark mode background */
- }
- 
- 
- input:checked + .theme-label::after {
-    transform: translateX(30px); /* Move the button to the right */
- }
- 
- 
- input:checked + .theme-label .sun {
-    color: #fff; /* Adjust sun color in dark mode */
- }
- 
- 
- input:checked + .theme-label .moon {
-    color: #fff; /* Adjust moon color in dark mode */
- }
- 
- 
- /* Dark Mode Styles */
- body.dark {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    /* opacity: 0.9; */
+    align-items: center;
+}
+
+.carousel-slide.active {
+    display: flex;
+    animation: fade-in 1.5s ease-in-out;
+}
+
+.carousel-slide img,
+.carousel-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.carousel-controls {
+    display: none;
+}
+
+.carousel-controls button {
+    display: none;
+}
+
+/* Fade-in Animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========== Dark Mode Styles ========== */
+body.dark {
     background-color: #121212;
     color: #f4f4f9;
- }
- 
- 
- header.dark {
-    background-color: rgba(50, 50, 50, 0.1); /* Dark translucent background */
-    box-shadow: 0 4px 8px rgba(100, 100, 100, 0.1); /* Soft white shadow */
- }
- 
- header.dark h1 {
+}
+
+header.dark {
+    background-color: rgba(50, 50, 50, 0.1);
+    box-shadow: 0 4px 8px rgba(100, 100, 100, 0.1);
+}
+
+header.dark h1 {
     color: #f4f4f9;
- }
- 
- header.dark nav a {
+}
+
+header.dark nav a {
     color: #f4f4f9;
- }
- 
- 
- header.dark nav a:hover {
+}
+
+header.dark nav a:hover {
     color: #ddd;
- }
- 
- 
- .education-card.dark, .experience-card.dark, .project-card.dark {
-    background-color: #1e1e1e;
+}
+
+header.dark nav a::before {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+header.dark nav a:hover::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+header.dark nav a:hover {
+    color: #ffffff;
+}
+
+header.dark nav a.active {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+header.dark {
+    background-color: #000;
+}
+
+.education-card.dark,
+.experience-card.dark,
+.project-card.dark {
+    background-color: #555555;
     color: #f4f4f9;
     border-color: #333;
     box-shadow: 0 6px 12px rgba(50, 50, 50, 0.3);
+}
 
- }
- 
- 
 .project-card.dark:hover {
     box-shadow: 0 6px 12px rgba(175, 175, 175, 0.3);
- }
- 
- 
- /* Dark Mode Styles for Nav Bar */
- header.dark {
-    background-color: #000; /* Change nav bar to black */
- }
- 
- 
- header.dark nav a {
-    color: #fff; /* Keep nav bar text white */
- }
- 
- 
- header.dark nav a:hover {
-    color: #ff0000; /* Change hover color to red */
- }
- 
- 
- /* Active Nav Tab Color in Dark Mode */
- header.dark nav a.active {
-    color: #ff0000; /* Red for active tab */
-    font-weight: bold; /* Optional: Highlight active tab with bold text */
- }
- 
- 
- .side-link.dark.active {
-    background-color: #ff0000; /* Red highlight for active side nav tab */
-    color: #fff; /* White text for active tab */
- }
- 
- 
- .side-link.dark {
-    background: #000; /* Change side navigation background to black */
-    color: #fff; /* Change side navigation text color to white */
- }
- 
- 
- .side-link.dark:hover {
-    background-color: #ff0000; /* Highlight side links in red on hover */
+}
+
+.side-link.dark.active {
+    background-color: #ff0000;
     color: #fff;
- }
- 
- 
- /* Filter Buttons in Dark Mode */
- body.dark .filter-btn {
-    background-color: #333; /* Dark background for buttons */
-    color: #fff; /* White text for dark mode */
-    border-color: #838383; /* Darker border */
- }
- 
- 
- body.dark .filter-btn.active {
-    background-color: #ff0000; /* Red for active button in dark mode */
+}
+
+.side-link.dark {
+    background: #000;
+    color: #fff;
+}
+
+.side-link.dark:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+/* Filter Buttons in Dark Mode */
+body.dark .filter-btn {
+    background-color: #333;
+    color: #fff;
+    border-color: #838383;
+}
+
+body.dark .filter-btn.active {
+    background-color: #ff0000;
     color: #fff;
     font-weight: bold;
- }
- 
- 
- body.dark .filter-btn:hover {
-    background-color: #ff000042; /* Red hover for dark mode */
+}
+
+body.dark .filter-btn:hover {
+    background-color: #ff000042;
     color: #fff;
- }
- 
- 
- 
- 
- /* Side Navigation Line */
- .side-line {
+}
+
+/* ========== Side Navigation Line ========== */
+.side-line {
     position: fixed;
     top: 50%;
     right: 10px;
@@ -545,105 +529,77 @@ header nav a:hover {
     align-items: center;
     gap: 20px;
     z-index: 1000;
-    opacity: 0; /* Hidden by default */
-    visibility: hidden; /* Prevents interaction when hidden */
+    opacity: 0;
+    visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
- }
- 
- 
- .side-line.visible {
-    opacity: 1; /* Show line after scrolling */
+}
+
+.side-line.visible {
+    opacity: 1;
     visibility: visible;
- }
- 
- 
- .side-line::before {
+}
+
+.side-line::before {
     content: "";
     position: absolute;
-    top: -20%; /* Extend the line above */
-    bottom: -20%; /* Extend the line below */
-    width: 3px; /* Line thickness */
-    background-color: #007bff; /* Light mode color */
-    z-index: -1; /* Ensure the line is behind the circles */
- }
- 
- 
- /* Side Circles */
- .side-circle {
-    width: 15px;
-    height: 15px;
-    background-color: #007bff; /* Light mode color */
-    border-radius: 50%;
-    position: relative;
-    transition: all 0.3s ease;
- }
- 
- 
- /* Expanded Circle (Rectangle with Section Name) */
- .side-circle::after {
-    content: attr(data-title); /* Show section name */
-    position: absolute;
-    top: 50%;
-    left: 50%; /* Align text box over the line */
-    transform: translate(-50%, -50%);
-    padding: 5px 10px;
-    background-color: #007bff; /* Light mode color */
-    color: #fff;
-    border-radius: 25px;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
- }
- 
- 
- /* Highlight Current Section */
- .side-circle.active {
-    width: 100px; /* Expand into rectangle */
-    height: 30px; /* Rectangle height */
-    border-radius: 25px; /* Rectangle shape */
- }
- 
- 
- .side-circle.active::after {
-    content: attr(data-title);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 25px; /* Rounder rectangle for text background */
-    opacity: 1;
-    pointer-events: auto;
- }
+    top: -20%;
+    bottom: -20%;
+    width: 3px;
+    background-color: #007bff00;
+    z-index: -1;
+}
 
- /* Dark Mode Adjustments */
- body.dark .side-line::before {
-    background-color: #ff0000; /* Dark mode line color */
- }
- 
- 
- body.dark .side-circle {
-    background-color: #ff0000; /* Dark mode circle color */
- }
- 
- 
- body.dark .side-circle.active::after {
-    background-color: #ff0000; /* Dark mode rectangle color */
- }
- 
- 
- /* Project Buttons */
- .project-buttons {
+/* Side Circles */
+.side-circle {
+    width: 10px; /* Default size for inactive circles */
+    height: 10px;
+    background-color: #aaa; /* Inactive circle color */
+    border-radius: 50%; /* Keep them as circles */
+    position: relative;
+    transition: all 0.3s ease; /* Smooth transition for size and color */
+}
+
+/* Active Side Circle */
+.side-circle.active {
+    width: 20px; /* Larger size for active circle */
+    height: 20px;
+    background-color: #007bff; /* Active circle color */
+}
+
+/* Optional: Add hover effect */
+.side-circle:hover {
+    background-color: #555; /* Darker shade on hover */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+body.dark .side-line::before {
+    background-color: #ff000000;
+}
+
+/* Side Circles - Dark Theme */
+body.dark .side-circle {
+    background-color: #929292; /* Inactive circle color in dark mode (Gray) */
+}
+
+/* Active Side Circle - Dark Theme */
+body.dark .side-circle.active {
+    background-color: #ff0000; /* Active circle color in dark mode (Red) */
+}
+
+/* Optional Hover Effect - Dark Theme */
+body.dark .side-circle:hover {
+    background-color: #888; /* Slightly brighter gray on hover */
+}
+
+/* ========== Project Buttons ========== */
+.project-buttons {
     margin-top: 10px;
     display: flex;
-    justify-content: center; /* Center the buttons */
-    gap: 10px; /* Space between buttons */
- }
- 
- 
- .btn {
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
     display: inline-block;
     padding: 8px 16px;
     text-decoration: none;
@@ -652,317 +608,86 @@ header nav a:hover {
     border-radius: 20px;
     text-align: center;
     transition: background-color 0.3s ease, transform 0.2s ease;
- }
- 
- 
- /* GitHub Button */
- .btn-github {
+}
+
+.btn-github {
     background-color: #333;
     color: #fff;
- }
- 
- 
- .btn-github:hover {
+}
+
+.btn-github:hover {
     background-color: #555;
     transform: scale(1.05);
- }
- 
- 
- /* Report Button */
- .btn-report {
+}
+
+.btn-report {
     background-color: #007bff;
     color: #fff;
- }
- 
- 
- .btn-report:hover {
+}
+
+.btn-report:hover {
     background-color: #0056b3;
     transform: scale(1.05);
- }
- 
- 
- /* Dark Mode Adjustments for Buttons */
- body.dark .btn-github {
-    background-color: #222;
-    color: #ddd;
- }
- 
- 
- body.dark .btn-github:hover {
-    background-color: #444;
- }
- 
- 
- body.dark .btn-report {
-    background-color: #ff0000;
-    color: #fff;
- }
- 
- 
- body.dark .btn-report:hover {
-    background-color: #cc0000;
- }
- 
- 
- /* Icons using Font Awesome */
- .btn i {
-    margin-right: 8px; /* Space between icon and text */
-    vertical-align: middle;
- }
- 
- 
- /* Cover Page Carousel */
- #cover-page {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full screen height */
-    overflow: hidden;
- }
- 
- 
- .carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
- }
- 
- 
- .carousel-slide.active {
-    display: flex;
-    animation: fade-in 1.5s ease-in-out;
- }
- 
- 
- .carousel-slide img, .carousel-slide video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image/video covers the entire screen */
- }
- 
- 
- .carousel-controls {
-    display: none;
- }
- 
- 
- .carousel-controls button {
-    display: none;
+}
 
- }
- 
- 
- .carousel-controls button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
- }
- 
- 
- /* Fade-in Animation */
- @keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
- }
- 
- 
- /* About Section Left Alignment */
- #about .about-description {
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
- }
- 
- 
- .project-card img {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease;
- }
- 
- 
- .project-card img:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
- }
- 
- 
-
-/* GitHub Button in Dark Mode */
+/* Dark Mode Adjustments for Buttons */
 body.dark .btn-github {
-    background-color: #ffffffeb; /* White background */
-    color: #333; /* Dark text */
-    border: 1px solid #ddd; /* Optional: Border for contrast */
+    background-color: #ffffffeb;
+    color: #333;
+    border: 1px solid #ddd;
 }
 
 body.dark .btn-github:hover {
-    background-color: #f0f0f0; /* Slightly darker white on hover */
-    color: #000; /* Ensure text remains visible */
+    background-color: #f0f0f0;
+    color: #000;
 }
 
-/* Project Skills Buttons */
+body.dark .btn-report {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+body.dark .btn-report:hover {
+    background-color: #cc0000;
+}
+
+/* Icons using Font Awesome */
+.btn i {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* ========== Project Skills Buttons ========== */
 .project-skills {
-    margin: 10px 0; /* Space around skills section */
+    margin: 10px 0;
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping for multiple skills */
-    gap: 5px; /* Space between skill buttons */
-    justify-content: center; /* Center the skills horizontally */
-    margin-bottom: 20px; /* Add space below skills and above GitHub/Report buttons */
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .skill-btn {
-    background-color: #ffffff; /* Primary color */
-    color: #000000; /* Text color */
-    border: 1px solid #000000;/* Remove borders */
-    border-radius: 5px; /* Rounded buttons */
-    padding: 5px 15px; /* Adjust padding for better appearance */
-    font-size: 14px; /* Font size */
-    cursor: default; /* Indicate these are static buttons */
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 14px;
+    cursor: default;
 }
 
 body.dark .skill-btn {
-    background-color: #282828; /* Dark background for skills buttons */
-    color: #fff; /* White text for dark mode */
-    border: 2px solid #666666; /* Optional: Add border for better visibility */
+    background-color: #282828;
+    color: #fff;
+    border: 2px solid #666666;
 }
 
-/* Header Navigation for Dark Mode */
-header.dark nav a {
-    color: #f4f4f9; /* Light text color for navigation links in dark mode */
-}
-
-header.dark nav a::before {
-    content: ""; /* Required for pseudo-element */
-    position: absolute;
-    top: -8px; /* Increase height by extending upwards */
-    left: -4px; /* Increase width by extending to the left */
-    right: -4px; /* Increase width by extending to the right */
-    bottom: -8px; /* Increase height by extending downwards */
-    background-color: rgba(255, 255, 255, 0.2); /* Hover background color (light gray in dark mode) */
-    z-index: -1; /* Place below the text */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
-}
-
-header.dark nav a:hover::before {
-    opacity: 1; /* Show background on hover */
-    transform: scale(1.1); /* Increase the size of the hover background */
-}
-
-header.dark nav a:hover {
-    color: #ffffff; /* Highlight text color on hover */
-}
-/* General Styles for Small Devices */
-@media (max-width: 768px) {
-    header {
-        padding: 10px; /* Reduce padding */
-        flex-wrap: wrap; /* Allow wrapping for small screens */
-    }
-
-    header h1 {
-        font-size: 1.2rem; /* Smaller title font size */
-        flex: 0 0 100%; /* Take full width */
-        text-align: center; /* Center title for smaller screens */
-    }
-
-    header nav {
-        flex: 1 1 auto; /* Allow navigation items to shrink and wrap */
-        justify-content: center; /* Center navigation items */
-        gap: 10px; /* Reduce spacing */
-        margin-right: 0; /* Remove margin for smaller screens */
-        flex-wrap: wrap; /* Allow wrapping for nav items */
-    }
-
-    .theme-toggle {
-        position: absolute; /* Move theme toggle to a fixed position */
-        right: 10px; /* Align to the right */
-        top: 10px; /* Keep it at the top */
-    }
-
-    .project-card {
-        max-width: 90%; /* Reduce card width */
-        margin: auto; /* Center cards */
-    }
-
-    .project-skills {
-        justify-content: center; /* Center skills for smaller screens */
-        gap: 3px; /* Reduce spacing between skill buttons */
-    }
-
-    .skill-btn {
-        padding: 4px 10px; /* Reduce padding for smaller buttons */
-        font-size: 12px; /* Smaller font size */
-    }
-}
-
-/* Extra Small Devices */
-@media (max-width: 480px) {
-    header {
-        flex-direction: column; /* Stack header items */
-        align-items: center; /* Center all items */
-    }
-
-    header nav {
-        justify-content: center; /* Center navigation links */
-        gap: 5px; /* Further reduce spacing */
-    }
-
-    .section {
-        padding: 20px; /* Reduce padding around sections */
-    }
-
-    .project-card {
-        max-width: 100%; /* Full width for cards */
-        padding: 10px; /* Reduce padding inside cards */
-    }
-
-    .filter-btn {
-        font-size: 12px; /* Smaller filter button text */
-        padding: 5px 10px; /* Reduce padding */
-    }
-
-    .theme-toggle {
-        right: 5px; /* Adjust theme toggle position */
-        top: 5px;
-    }
-}
-
-/* Project Skills for Small Devices */
-.project-skills {
-    flex-wrap: wrap; /* Allow skill buttons to wrap */
-    justify-content: center; /* Center skills */
-    gap: 5px; /* Adjust spacing for smaller screens */
-}
-
-.skill-btn {
-    font-size: 12px; /* Smaller font for smaller screens */
-    padding: 3px 8px; /* Reduce padding */
-}
-
-/* Responsive Navigation Links */
-header nav a {
-    font-size: 14px; /* Reduce font size */
-    padding: 5px 10px; /* Adjust padding for smaller screens */
-}
-
-header nav a::before {
-    top: -5px; /* Adjust hover size */
-    bottom: -5px;
-    left: -3px;
-    right: -3px;
-}
-
-/* Media Container */
+/* ========== Media Container Styles ========== */
 .media-container {
     position: relative;
     width: 100%;
-    height: 330px; /* Set a consistent height for cards */
+    height: 330px;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
