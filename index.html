@@ -10,14 +10,14 @@
 </head>
 <body>
 
-    <!-- Light/Dark Mode Toggle -->
+    <!-- Light/Dark Mode Toggle
     <div class="theme-toggle">
         <input type="checkbox" id="theme-switch">
         <label for="theme-switch" class="theme-label">
             <span class="sun">☀️</span>
             <span class="moon">🌙</span>
         </label>
-    </div>
+    </div> -->
 
     <!-- Side Navigation -->
     <div class="side-line">
@@ -29,22 +29,28 @@
     </div>
 
     <header>
-        <div class="header-container">
-            <h1>Miheer's Robotics Portfolio</h1>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
+        <h1>MD</h1>
+        <nav>
+            <a href="#about"><b>About</b></a>
+            <a href="#education"><b>Education</b></a>
+            <a href="#experience"><b>Experience</b></a>
+            <a href="#projects"><b>Projects</b></a>
+            <a href="#contact"><b>Contact</b></a>
+            <a href="#contact"><b>CAD</b></a>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch">
+                <label for="theme-switch" class="theme-label">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </label>
+            </div>
+        </nav>
     </header>
 
     <div id="cover-page" class="carousel">
         <div class="carousel-slide active">
             <video autoplay loop muted>
-                <source src="assets/cover1.mp4" type="video/mp4">
+                <source src="assets/DR_drone.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -140,10 +146,18 @@
                 <div class="project-info">
                     <h4>Object Detection for Drones</h4>
                     <p>Implemented real-time object detection using YOLO and ROS2 for autonomous drones.</p>
-                    <video autoplay loop muted>
+                    <!-- <video autoplay loop muted>
                         <source src="assets/project1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
-                    </video>
+                    </video> -->
+
+                    <!-- Skills Buttons -->
+                    <div class="project-skills">
+                        <button class="skill-btn">YOLO</button>
+                        <button class="skill-btn">ROS2</button>
+                        <button class="skill-btn">Python</button>
+                    </div>
+
                     <!-- Buttons -->
                     <div class="project-buttons">
                         <a href="https://github.com/example-repo" target="_blank" class="btn btn-github">
@@ -156,46 +170,33 @@
                 </div>
             </div>
 
-            <!-- Project Modal -->
-            <div id="project-modal-1" class="project-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <div class="carousel">
-                        <div class="carousel-slide active">
-                            <img src="assets/project1.jpg" alt="Slide 1">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="assets/project2.jpg" alt="Slide 2">
-                        </div>
-                        <div class="carousel-slide">
-                            <video autoplay loop muted>
-                                <source src="assets/project1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="carousel-controls">
-                            <button class="carousel-prev">&lt;</button>
-                            <button class="carousel-next">&gt;</button>
-                        </div>
-                    </div>
-                    <div class="expanded-description">
-                        <h3>Object Detection for Drones</h3>
-                        <p>
-                            Fully implemented real-time object detection using YOLO and ROS2 for autonomous drones. The system was tested in dynamic environments and achieved high accuracy with low latency.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
             <!-- Deep Learning Projects -->
             <div class="project-card" data-category="dl">
                 <img src="assets/project1.jpg" alt="Deep Learning Project 1">
                 <div class="project-info">
                     <h4>Path Planning with Deep RL</h4>
                     <p>Designed a reinforcement learning model for robot navigation in dynamic environments.</p>
-                    <video autoplay loop muted>
+                    <!-- <video autoplay loop muted>
                         <source src="assets/project1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
-                    </video>
+                    </video> -->
+
+                    <!-- Skills Buttons -->
+                    <div class="project-skills">
+                        <button class="skill-btn">YOLO</button>
+                        <button class="skill-btn">ROS2</button>
+                        <button class="skill-btn">Python</button>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="project-buttons">
+                        <a href="https://github.com/example-repo" target="_blank" class="btn btn-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://example-report.com" target="_blank" class="btn btn-report">
+                            <i class="fas fa-file-alt"></i> Report
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -206,10 +207,27 @@
                 <div class="project-info">
                     <h4>Gazebo Simulation</h4>
                     <p>Simulated a robot navigating multiple waypoints in Gazebo using ROS2 and Nav2.</p>
-                    <video autoplay loop muted>
+                    <!-- <video autoplay loop muted>
                         <source src="assets/project1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
-                    </video>
+                    </video> -->
+
+                    <!-- Skills Buttons -->
+                    <div class="project-skills">
+                        <button class="skill-btn">YOLO</button>
+                        <button class="skill-btn">ROS2</button>
+                        <button class="skill-btn">Python</button>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="project-buttons">
+                        <a href="https://github.com/example-repo" target="_blank" class="btn btn-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://example-report.com" target="_blank" class="btn btn-report">
+                            <i class="fas fa-file-alt"></i> Report
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -220,10 +238,28 @@
                 <div class="project-info">
                     <h4>LiDAR Navigation</h4>
                     <p>Developed a LiDAR-based navigation system for autonomous ground vehicles.</p>
-                    <video autoplay loop muted>
+                    <!-- <video autoplay loop muted>
                         <source src="assets/project1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
-                    </video>
+                    </video> -->
+
+
+                    <!-- Skills Buttons -->
+                    <div class="project-skills">
+                        <button class="skill-btn">YOLO</button>
+                        <button class="skill-btn">ROS2</button>
+                        <button class="skill-btn">Python</button>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="project-buttons">
+                        <a href="https://github.com/example-repo" target="_blank" class="btn btn-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://example-report.com" target="_blank" class="btn btn-report">
+                            <i class="fas fa-file-alt"></i> Report
+                        </a>
+                    </div>
                 </div>
             </div>
 

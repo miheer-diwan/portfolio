@@ -5,39 +5,72 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
- }
- 
- 
- header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
- }
- 
- 
- header nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: transform 0.3s ease;
- }
- 
- 
- header nav a:hover {
-    transform: scale(1.1);
-    color: #007bff;
- }
- 
- 
- /* Section Styles */
- .section {
+}
+
+/* Header Styles */
+header {
+    position: fixed; /* Fix header at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: rgba(255, 255, 255, 0.7); /* White and translucent */
+    color: #333; /* Text color */
+    padding: 10px 20px; /* Adjust padding for spacing */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically align content */
+    justify-content: space-between; /* Space between title and nav items */
+    z-index: 1000; /* Ensure it appears above other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+
+/* Header Title */
+header h1 {
+    font-size: 1.5rem; /* Adjust font size */
+    margin: 0; /* Remove default margin */
+    flex: 1; /* Push nav items to the right */
+    text-align: left; /* Align title to the left */
+}
+
+/* Header Navigation */
+header nav {
+    display: flex; /* Flexbox for nav items */
+    align-items: center; /* Vertically align buttons */
+    gap: 15px; /* Space between nav links */
+    flex: 1; /* Allow space between title and theme toggle */
+    justify-content: flex-end; /* Right-align nav buttons */
+    margin-right: 120px; /* Add space for the theme toggle */
+}
+
+/* Light/Dark Mode Toggle */
+.theme-toggle {
+    margin-left: 15px; /* Space between nav links and toggle */
+    position: relative; /* Ensure alignment within header */
+    flex-shrink: 0; /* Prevent shrinking of the toggle */
+}
+
+/* Navigation Links */
+header nav a {
+    color: #333; /* Text color for navigation links */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust font size */
+    padding: 5px 10px; /* Add padding for clickable area */
+    border-radius: 5px; /* Add rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+header nav a:hover {
+    background-color: #f0f0f0; /* Light hover background */
+    color: #007bff; /* Highlight text color */
+}
+
+/* Adjust Section Spacing for Fixed Header */
+.section {
+    margin-top: 80px; /* Prevent content overlap with fixed header */
     padding: 50px;
     text-align: center;
- }
- 
- 
+}
+
+
  /* Side Navigation */
  .side-nav {
     position: fixed;
@@ -102,15 +135,9 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 1px solid #ddd;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: box-shadow 0.3s;
  }
- 
- 
- .education-card:hover, .experience-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
- }
- 
+
  
  /* Education and Experience Layout */
  .education-container, .experience-container {
@@ -179,7 +206,7 @@ body {
  
  
  .project-card:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
  }
  
@@ -390,9 +417,13 @@ body {
  
  
  header.dark {
-    background-color: #1e1e1e;
+    background-color: rgba(0, 0, 0, 0.1); /* Dark translucent background */
+    box-shadow: 0 4px 8px rgba(100, 100, 100, 0.1); /* Soft white shadow */
  }
  
+ header.dark h1 {
+    color: #f4f4f9;
+ }
  
  header.dark nav a {
     color: #f4f4f9;
@@ -408,11 +439,13 @@ body {
     background-color: #1e1e1e;
     color: #f4f4f9;
     border-color: #333;
+    box-shadow: 0 6px 12px rgba(50, 50, 50, 0.3);
+
  }
  
  
- .education-card.dark:hover, .experience-card.dark:hover, .project-card.dark:hover {
-    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
+.project-card.dark:hover {
+    box-shadow: 0 6px 12px rgba(175, 175, 175, 0.3);
  }
  
  
@@ -546,7 +579,7 @@ body {
  .side-circle.active {
     width: 100px; /* Expand into rectangle */
     height: 30px; /* Rectangle height */
-    border-radius: 5px; /* Rectangle shape */
+    border-radius: 25px; /* Rectangle shape */
  }
  
  
@@ -692,25 +725,13 @@ body {
  
  
  .carousel-controls {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    z-index: 10;
+    display: none;
  }
  
  
  .carousel-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s;
+    display: none;
+
  }
  
  
@@ -856,3 +877,39 @@ body {
  .carousel-controls button:hover {
     background-color: rgba(255, 255, 255, 0.5);
  }
+
+/* GitHub Button in Dark Mode */
+body.dark .btn-github {
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text */
+    border: 1px solid #ddd; /* Optional: Border for contrast */
+}
+
+body.dark .btn-github:hover {
+    background-color: #f0f0f0; /* Slightly darker white on hover */
+    color: #000; /* Ensure text remains visible */
+}
+
+/* Project Skills Buttons */
+.project-skills {
+    margin: 10px 0; /* Space around skills section */
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for multiple skills */
+    gap: 10px; /* Space between skill buttons */
+}
+
+.skill-btn {
+    background-color: #ffffff; /* Primary color */
+    color: #000000; /* Text color */
+    border: box-border; /* Remove borders */
+    border-radius: 5px; /* Rounded buttons */
+    padding: 5px 15px; /* Adjust padding for better appearance */
+    font-size: 14px; /* Font size */
+    cursor: default; /* Indicate these are static buttons */
+}
+
+body.dark .skill-btn {
+    background-color: #444; /* Dark background for skills buttons */
+    color: #fff; /* White text for dark mode */
+    border: 1px solid #666; /* Optional: Add border for better visibility */
+}
