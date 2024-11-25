@@ -25,6 +25,14 @@ header {
     justify-content: space-between;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px); /* Add blur effect */
+    transition: backdrop-filter 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Scrolled Header Effect */
+header.scrolled {
+    backdrop-filter: blur(10px); /* Increase blur when scrolled */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
 }
 
 header h1 {
@@ -77,6 +85,7 @@ header nav a:hover {
 /* ========== Light/Dark Mode Toggle ========== */
 .theme-toggle {
     margin-left: 15px;
+    margin-right: 30px;
     position: relative;
     flex-shrink: 0;
     position: fixed;
