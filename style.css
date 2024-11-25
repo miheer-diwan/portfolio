@@ -37,7 +37,7 @@ header h1 {
 header nav {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0px;
     flex: 1;
     justify-content: flex-end;
     margin-right: 120px;
@@ -56,8 +56,8 @@ header nav a::before {
     content: "";
     position: absolute;
     top: -10px;
-    left: -6px;
-    right: -6px;
+    left: -7px;
+    right: -8px;
     bottom: -10px;
     background-color: rgba(0, 0, 0, 0.1);
     z-index: -1;
@@ -152,11 +152,75 @@ input:checked + .theme-label .moon {
 }
 
 /* ========== Section Styles ========== */
+/* General Section Styles */
 .section {
-    margin-top: 80px;
+    margin-top: 80px; /* Prevent content overlap with fixed header */
     padding: 50px;
     text-align: center;
+    font-size: 1.2rem; /* Increased font size for general text */
+    line-height: 1.5; /* Adjust line height for better readability */
 }
+
+/* Section Headings */
+.section h2 {
+    font-size: 2.0rem; /* Increased heading size */
+    margin-bottom: 20px; /* Add spacing below the heading */
+    font-weight: bold; /* Make the headings stand out */
+}
+
+/* Paragraph Text */
+.section p {
+    font-size: 1.1rem; /* Slightly larger paragraph text */
+    margin: 10px 0; /* Add spacing between paragraphs */
+}
+
+/* Adjustments for Specific Sections (Optional) */
+#about .about-description {
+    font-size: 1.3rem; /* Larger font for about section */
+    text-align: justify; /* Justify text for neat alignment */
+}
+
+.education-description, .experience-description {
+    font-size: 1.1rem; /* Slightly larger font for descriptions */
+    text-align: justify; /* Justify text for alignment */
+}
+
+/* About Section Layout */
+#about {
+    scroll-margin-top: 100px; /* Offset for the height of the fixed header */
+    display: flex; /* Enable flexbox for two-column layout */
+    align-items: center; /* Vertically center the content */
+    justify-content: space-between; /* Add space between the columns */
+    margin-top: 150px; /* Prevent overlap with header */
+    padding-left: 20%; /* Adjust padding for better centering */
+    padding-right: 10%;
+    gap: 0px; /* Space between text and image */
+}
+
+/* About Text */
+.about-description {
+    flex: 1; /* Take up available space */
+    font-size: 1.2rem; /* Increase font size for readability */
+    line-height: 1.5; /* Improve text spacing */
+    text-align: justify; /* Neatly align text */
+    margin-right: 20px; /* Add spacing on the right side of the text */
+}
+
+/* About Image */
+.about-image {
+    flex: 1; /* Take up available space */
+    display: flex; /* Center the image */
+    justify-content: center; /* Center image horizontally within its column */
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%; /* Adjust image size */
+    max-width: 300px; /* Limit the maximum width */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
 
 /* ========== Side Navigation Styles ========== */
 .side-nav {
@@ -248,7 +312,7 @@ input:checked + .theme-label .moon {
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border: 1px solid #ddd;
     max-width: 400px;
     width: 100%;
@@ -282,19 +346,19 @@ input:checked + .theme-label .moon {
 }
 
 .filter-btn {
-    background-color: #f4f4f9;
+    background-color: rgba(255, 255, 255, 0.7);
     color: #000000;
     border: 1px solid #000000;
     border-radius: 25px;
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s ease;
 }
 
 .filter-btn:hover {
-    background-color: rgba(0, 120, 241, 0.6);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
     transform: scale(1.1);
 }
 
@@ -478,7 +542,7 @@ header.dark {
     background-color: #555555;
     color: #f4f4f9;
     border-color: #333;
-    box-shadow: 0 6px 12px rgba(50, 50, 50, 0.3);
+    box-shadow: 0 6px 12px rgba(77, 77, 77, 0.3);
 }
 
 .project-card.dark:hover {
@@ -502,20 +566,20 @@ header.dark {
 
 /* Filter Buttons in Dark Mode */
 body.dark .filter-btn {
-    background-color: #333;
-    color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #000000;
     border-color: #838383;
 }
 
 body.dark .filter-btn.active {
-    background-color: #ff0000;
+    background-color: #ff0000ad;
     color: #fff;
     font-weight: bold;
 }
 
 body.dark .filter-btn:hover {
-    background-color: #ff000042;
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 /* ========== Side Navigation Line ========== */
@@ -551,8 +615,8 @@ body.dark .filter-btn:hover {
 
 /* Side Circles */
 .side-circle {
-    width: 10px; /* Default size for inactive circles */
-    height: 10px;
+    width: 15px; /* Default size for inactive circles */
+    height: 15px;
     background-color: #aaa; /* Inactive circle color */
     border-radius: 50%; /* Keep them as circles */
     position: relative;
