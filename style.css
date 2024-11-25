@@ -962,3 +962,102 @@ header.dark nav a:hover::before {
 header.dark nav a:hover {
     color: #ffffff; /* Highlight text color on hover */
 }
+/* General Styles for Small Devices */
+@media (max-width: 768px) {
+    header {
+        padding: 10px; /* Reduce padding */
+        flex-wrap: wrap; /* Allow wrapping for small screens */
+    }
+
+    header h1 {
+        font-size: 1.2rem; /* Smaller title font size */
+        flex: 0 0 100%; /* Take full width */
+        text-align: center; /* Center title for smaller screens */
+    }
+
+    header nav {
+        flex: 1 1 auto; /* Allow navigation items to shrink and wrap */
+        justify-content: center; /* Center navigation items */
+        gap: 10px; /* Reduce spacing */
+        margin-right: 0; /* Remove margin for smaller screens */
+        flex-wrap: wrap; /* Allow wrapping for nav items */
+    }
+
+    .theme-toggle {
+        position: absolute; /* Move theme toggle to a fixed position */
+        right: 10px; /* Align to the right */
+        top: 10px; /* Keep it at the top */
+    }
+
+    .project-card {
+        max-width: 90%; /* Reduce card width */
+        margin: auto; /* Center cards */
+    }
+
+    .project-skills {
+        justify-content: center; /* Center skills for smaller screens */
+        gap: 3px; /* Reduce spacing between skill buttons */
+    }
+
+    .skill-btn {
+        padding: 4px 10px; /* Reduce padding for smaller buttons */
+        font-size: 12px; /* Smaller font size */
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column; /* Stack header items */
+        align-items: center; /* Center all items */
+    }
+
+    header nav {
+        justify-content: center; /* Center navigation links */
+        gap: 5px; /* Further reduce spacing */
+    }
+
+    .section {
+        padding: 20px; /* Reduce padding around sections */
+    }
+
+    .project-card {
+        max-width: 100%; /* Full width for cards */
+        padding: 10px; /* Reduce padding inside cards */
+    }
+
+    .filter-btn {
+        font-size: 12px; /* Smaller filter button text */
+        padding: 5px 10px; /* Reduce padding */
+    }
+
+    .theme-toggle {
+        right: 5px; /* Adjust theme toggle position */
+        top: 5px;
+    }
+}
+
+/* Project Skills for Small Devices */
+.project-skills {
+    flex-wrap: wrap; /* Allow skill buttons to wrap */
+    justify-content: center; /* Center skills */
+    gap: 5px; /* Adjust spacing for smaller screens */
+}
+
+.skill-btn {
+    font-size: 12px; /* Smaller font for smaller screens */
+    padding: 3px 8px; /* Reduce padding */
+}
+
+/* Responsive Navigation Links */
+header nav a {
+    font-size: 14px; /* Reduce font size */
+    padding: 5px 10px; /* Adjust padding for smaller screens */
+}
+
+header nav a::before {
+    top: -5px; /* Adjust hover size */
+    bottom: -5px;
+    left: -3px;
+    right: -3px;
+}
