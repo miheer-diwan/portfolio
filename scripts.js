@@ -19,26 +19,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Highlight active link
     const highlightSection = () => {
         let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
         sections.forEach((section, index) => {
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.offsetTop - 150; // Adjust for header height
             const sectionBottom = sectionTop + section.offsetHeight;
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                // Clear active state from all circles
                 sideCircles.forEach(circle => circle.classList.remove("active"));
+
+                // Set active state for the matching circle
                 sideCircles[index].classList.add("active");
             }
         });
 
-        // Highlight Contact Tab if we're at the bottom of the page
+        // Special case: Highlight the last circle when scrolled to the bottom
         if ((window.innerHeight + scrollPosition) >= document.body.offsetHeight) {
             sideCircles.forEach(circle => circle.classList.remove("active"));
             sideCircles[sideCircles.length - 1].classList.add("active");
         }
     };
+
 
     window.addEventListener("scroll", highlightSection);
 

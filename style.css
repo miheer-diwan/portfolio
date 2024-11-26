@@ -163,7 +163,7 @@ input:checked + .theme-label .moon {
 /* ========== Section Styles ========== */
 /* General Section Styles */
 .section {
-    margin-top: 80px; /* Prevent content overlap with fixed header */
+    margin-top: 80px; /* Prevent content overlap with fixed header  */
     padding: 50px;
     text-align: center;
     font-size: 1.2rem; /* Increased font size for general text */
@@ -444,7 +444,7 @@ input:checked + .theme-label .moon {
     color: #000000; /* White text */
     text-decoration: none; /* Remove underline */
     text-shadow: none;
-    background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
     border: 1px solid #000000; /* White border for subtle design */
     border-radius: 25px; /* Fully rounded corners */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
