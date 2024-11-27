@@ -9,8 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const filterBtns = document.querySelectorAll(".filter-btn"); // Project filter buttons
     const projects = document.querySelectorAll(".project-card"); // Project cards
     const carousels = document.querySelectorAll(".project_carousel"); // Carousels for project cards
+    const modal = document.getElementById("static-project-modal");
+    const modalClose = modal.querySelector(".close");
+    const projectCards = document.querySelectorAll(".project-card");
 
-    // Show nav line after scrolling
+    // --- Side Navigation Visibility ---
     window.addEventListener("scroll", () => {
         if (window.scrollY > 100) {
             sideNav.classList.add("visible");
@@ -19,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // --- Highlight Active Section ---
     const highlightSection = () => {
         let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
@@ -42,9 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-
     window.addEventListener("scroll", highlightSection);
 
+    // --- Theme Toggle ---
     // Load saved theme preference from localStorage
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -81,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         filterBtns.forEach(btn => btn.classList.remove("dark"));
     }
 
-    // Project Filtering Logic
+    // --- Project Filtering Logic ---
     filterBtns.forEach(btn => {
         btn.addEventListener("click", () => {
             // Remove active class from all buttons
@@ -107,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize: Show all projects by default
     document.querySelector('.filter-btn[data-filter="all"]').click();
 
-    // --- Carousel and Hover Logic ---
+    // --- Project Card Carousel and Hover Logic ---
     carousels.forEach(carousel => {
         const slides = carousel.querySelectorAll("img");
         const hoverMedia = carousel.parentElement.querySelector(".hover-media");
@@ -160,4 +164,61 @@ document.addEventListener("DOMContentLoaded", () => {
         // Initialize the first slide as active
         updateSlide();
     });
+
+    // --- Modal Carousel Logic ---
+    const prevButton = modal.querySelector(".carousel-prev");
+    const nextButton = modal.querySelector(".carousel-next");
+    const modalSlides = modal.querySelectorAll(".media-carousel img, .media-carousel video");
+    let currentModalSlide = 0;
+
+    // Function to show modal slide
+    function showModalSlide(index) {
+        modalSlides.forEach((slide, i) => {
+            slide.style.transform = `translateX(${100 * (i - index)}%)`;
+            slide.style.opacity = i === index ? "1" : "0";
+            slide.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        });
+    }
+
+    // Navigate to Previous Slide in Modal
+    prevButton.addEventListener("click", () => {
+        currentModalSlide = (currentModalSlide - 1 + modalSlides.length) % modalSlides.length;
+        showModalSlide(currentModalSlide);
+    });
+
+    // Navigate to Next Slide in Modal
+    nextButton.addEventListener("click", () => {
+        currentModalSlide = (currentModalSlide + 1) % modalSlides.length;
+        showModalSlide(currentModalSlide);
+    });
+
+    // Open modal when clicking on a project card
+    projectCards.forEach((card) => {
+        card.addEventListener("click", () => {
+            modal.classList.add("active");
+            document.body.classList.add("modal-open"); // Prevent scrolling
+            currentModalSlide = 0; // Reset to first slide
+            showModalSlide(currentModalSlide);
+        });
+    });
+
+    // Close modal when clicking the close button
+    modalClose.addEventListener("click", () => {
+        closeModal();
+    });
+
+    // Close modal when clicking outside the modal content
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    function closeModal() {
+        modal.classList.remove("active");
+        document.body.classList.remove("modal-open");
+    }
+
+    // Initialize First Modal Slide
+    showModalSlide(currentModalSlide);
 });

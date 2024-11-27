@@ -164,7 +164,7 @@
         <!-- Projects Grid -->
         <div class="projects-container">
             <!-- Computer Vision Projects -->
-            <div class="project-card" data-category="cv">
+            <div class="project-card" data-category="cv" onclick="expandCard(this)">
                 <div class="media-container">
                     <div class="project_carousel">
                         <img src="assets/chip.jpg" alt="Slide 1">
@@ -201,7 +201,7 @@
             </div>
 
             <!-- Deep Learning Projects -->
-            <div class="project-card" data-category="dl cv">
+            <div class="project-card" data-category="dl cv" onclick="expandCard(this)">
                 <div class="media-container">
                     <div class="project_carousel">
                         <img src="assets/chip.jpg" alt="Slide 1">
@@ -238,7 +238,7 @@
             </div>
 
             <!-- Simulation Projects -->
-            <div class="project-card" data-category="simulation">
+            <div class="project-card" data-category="simulation" onclick="expandCard(this)">
                 <div class="media-container">
                     <div class="project_carousel">
                         <img src="assets/chip.jpg" alt="Slide 1">
@@ -275,7 +275,7 @@
             </div>
 
             <!-- Navigation Projects -->
-            <div class="project-card" data-category="navigation">
+            <div class="project-card" data-category="navigation" onclick="expandCard(this)">
                 <div class="media-container">
                     <div class="project_carousel">
                         <img src="assets/chip.jpg" alt="Slide 1">
@@ -318,10 +318,58 @@
         <p>Email: <a href="mailto:miheer.diwan@gmail.com">miheer.diwan@gmail.com</a></p>
     </section>
 
+    <div id="static-project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-layout">
+                <!-- Left Column -->
+                <div class="modal-left">
+                    <h2 class="modal-title">Perception Stack</h2>
+                    <div class="modal-media">
+                        <div class="media-carousel">
+                            <img src="assets/mih.png" alt="Project Media 1">
+                            <img src="assets/nn.jpg" alt="Project Media 2">
+                            <video autoplay controls loop>
+                                <source src="assets/voxel_dr.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        <!-- Navigation Buttons -->
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- Right Column -->
+                <div class="modal-right">
+                    <p class="modal-description">
+                        This is a detailed description of the project. You can manually add content here for each project.
+                    </p>
+                    <!-- Skills Buttons -->
+                    <div class="project-skills">
+                        <button class="skill-btn">YOLO</button>
+                        <button class="skill-btn">ROS2</button>
+                        <button class="skill-btn">Python</button>
+                    </div>
+                    <div class="modal-buttons">
+                        <a href="https://github.com/example-repo" target="_blank" class="btn btn-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://example-report.com" target="_blank" class="btn btn-report">
+                            <i class="fas fa-file-alt"></i> Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2024 Miheer Diwan. All rights reserved.</p>
     </footer>
 
     <script src="scripts.js"></script>
+
 </body>
 </html>
