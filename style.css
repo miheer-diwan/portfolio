@@ -259,7 +259,7 @@ input:checked + .theme-label .moon {
     align-items: center;
     justify-content: center;
     background-color: #ffffff; /* Light gray fill */
-    border: 1px solid #ccc; /* Light gray border */
+    border: 1px solid #b9b9b9; /* Light gray border */
     color: #000000; /* Text color */
     text-decoration: none;
     padding: 5px 10px; /* Adjust padding */
@@ -311,6 +311,7 @@ body.dark .side-nav-item {
     background-color: #464646; /* Dark background */
     color: #fff; /* White text */
     border-color: #555; /* Darker border */
+    box-shadow: 0 2px 5px rgba(174, 174, 174, 0.2); /* Subtle shadow */
 }
 
 body.dark .side-nav-item.collapsed {
@@ -372,17 +373,18 @@ body.dark .side-nav-item:hover {
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border: 1px solid #ddd;
-    max-width: 350px;
+    max-width: 300px;
     width: 100%;
+    margin-bottom: 40px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project-card img,
+/* .project-card img,
 .project-card video {
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .project-card:hover {
     transform: scale(1.02);
@@ -440,7 +442,7 @@ body.dark .side-nav-item:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .projects-category {
@@ -827,7 +829,7 @@ body.dark .skill-btn {
 .media-container {
     position: relative;
     width: 100%;
-    height: 330px;
+    height: 200px;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
