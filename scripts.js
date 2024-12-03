@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sideNav = document.querySelector(".side-line");
     const sections = document.querySelectorAll(".section");
-    const sideLinks = document.querySelectorAll(".side-link");
+    const sideLinks = document.querySelectorAll(".side-nav-item");
     const themeSwitch = document.getElementById("theme-switch");
     const body = document.body;
     const cards = document.querySelectorAll(".education-card, .experience-card, .project-card"); // Select all cards
-    const sideCircles = document.querySelectorAll(".side-circle");
     const filterBtns = document.querySelectorAll(".filter-btn"); // Project filter buttons
     const projects = document.querySelectorAll(".project-card"); // Project cards
     const carousels = document.querySelectorAll(".project_carousel"); // Carousels for project cards
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // --- Highlight Active Section ---
+    // --- Highlight Active Section and Manage Sidebar Items ---
     const highlightSection = () => {
         let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
@@ -31,22 +30,24 @@ document.addEventListener("DOMContentLoaded", () => {
             const sectionBottom = sectionTop + section.offsetHeight;
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                // Clear active state from all circles
-                sideCircles.forEach(circle => circle.classList.remove("active"));
+                // Remove 'collapsed' from all side nav items
+                sideLinks.forEach(link => link.classList.remove("collapsed"));
 
-                // Set active state for the matching circle
-                sideCircles[index].classList.add("active");
+                // Add 'collapsed' to the active item
+                sideLinks[index].classList.add("collapsed");
             }
         });
 
-        // Special case: Highlight the last circle when scrolled to the bottom
+        // Special case: Handle the last item when scrolled to the bottom
         if ((window.innerHeight + scrollPosition) >= document.body.offsetHeight) {
-            sideCircles.forEach(circle => circle.classList.remove("active"));
-            sideCircles[sideCircles.length - 1].classList.add("active");
+            sideLinks.forEach(link => link.classList.remove("collapsed"));
+            sideLinks[sideLinks.length - 1].classList.add("collapsed");
         }
     };
 
+    // Call this function on scroll
     window.addEventListener("scroll", highlightSection);
+    highlightSection(); // Initialize on load
 
     // --- Theme Toggle ---
     // Load saved theme preference from localStorage

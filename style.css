@@ -232,46 +232,95 @@ input:checked + .theme-label .moon {
 
 
 /* ========== Side Navigation Styles ========== */
-.side-nav {
+/* Side Navigation Line */
+.side-line {
     position: fixed;
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
+    align-items: flex-end; /* Align items to the right */
     gap: 10px;
     z-index: 1000;
     opacity: 0;
-    transition: opacity 0.3s;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.side-nav.visible {
+.side-line.visible {
     opacity: 1;
+    visibility: visible;
 }
 
-.side-link {
-    display: block;
+/* General Styles for Side Nav Items */
+.side-nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; /* Light gray fill */
+    border: 1px solid #ccc; /* Light gray border */
+    color: #000000; /* Text color */
     text-decoration: none;
-    color: #333;
-    padding: 10px;
-    background: #f4f4f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-    text-align: center;
-    transition: background-color 0.3s, transform 0.3s;
+    padding: 5px 10px; /* Adjust padding */
+    border-radius: 20px; /* Rounded corners */
+    font-size: 12px;
+    font-weight: normal;
+    /* transition: 0.3s ease; Smooth transitions for animation */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.side-link:hover {
-    background-color: #007bff;
-    color: #fff;
-    transform: scale(1.1);
+/* Non-active (Expanded) State */
+.side-nav-item::before {
+    content: attr(data-title); /* Display section name */
+    white-space: nowrap;
 }
 
-.side-link.active {
-    background-color: #0056b3;
-    color: #fff;
-    font-weight: bold;
+/* Active (Collapsed) State */
+.side-nav-item.collapsed {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border-radius: 50%; /* Make it a circle */
+    background-color: #007bff; /* Active circle color */
+    color: transparent; /* Hide text */
+    overflow: hidden;
+    border: 2px solid #007bff; /* Add a stronger border for active */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    transition: all 0.3s ease-in-out; /* Smooth animation for active */
+}
+
+/* Remove text when collapsed */
+.side-nav-item.collapsed::before {
+    content: "";
+}
+
+/* Hover Effects for Non-active Items */
+.side-nav-item:hover {
+    background-color: #e0e0e0; /* Slightly darker gray on hover */
+    border-color: #aaa; /* Darker border on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Smooth animation on hover */
+}
+
+/* Dark Mode Adjustments */
+body.dark .side-nav-item {
+    background-color: #464646; /* Dark background */
+    color: #fff; /* White text */
+    border-color: #555; /* Darker border */
+}
+
+body.dark .side-nav-item.collapsed {
+    background-color: #ff0000; /* Active red in dark mode */
+    border-color: #ff0000; /* Stronger red border */
+}
+
+body.dark .side-nav-item:hover {
+    background-color: #444; /* Slightly brighter gray on hover */
+    border-color: #666; /* Brighter border on hover */
 }
 
 /* ========== Education and Experience Styles ========== */
@@ -438,8 +487,8 @@ input:checked + .theme-label .moon {
 
 .carousel-buttons a {
     display: inline-block;
-    padding: 8px 20px; /* Adjust padding for better proportions */
-    font-size: 1.0rem; /* Adjust font size */
+    padding: 10px 15px; /* Adjust padding for better proportions */
+    font-size: 0.9rem; /* Adjust font size */
     font-weight: normal; /* Remove bold font */
     color: #000000; /* White text */
     text-decoration: none; /* Remove underline */
@@ -622,15 +671,42 @@ body.dark .filter-btn:hover {
     z-index: -1;
 }
 
-/* Side Circles */
+/* Side Circles (Expanded by Default) */
 .side-circle {
-    width: 15px; /* Default size for inactive circles */
-    height: 15px;
-    background-color: #aaa; /* Inactive circle color */
-    border-radius: 50%; /* Keep them as circles */
+    width: 20px; /* Default size for expanded circles */
+    height: 20px;
+    background-color: #aaa; /* Default color */
+    border-radius: 50%; /* Circular shape */
     position: relative;
-    transition: all 0.3s ease; /* Smooth transition for size and color */
+    transition: all 0.3s ease; /* Smooth transition */
 }
+
+/* Collapsed Circle (Active Section) */
+.side-circle.collapsed {
+    width: 15px; /* Smaller size for the collapsed (active) circle */
+    height: 15px;
+    background-color: #007bff; /* Active circle color */
+}
+
+/* Optional Hover Effect */
+.side-circle:hover {
+    background-color: #555; /* Darker shade on hover */
+    cursor: pointer;
+}
+
+/* Dark Mode Adjustments */
+body.dark .side-circle {
+    background-color: #929292; /* Gray for inactive circles in dark mode */
+}
+
+body.dark .side-circle.collapsed {
+    background-color: #ff0000; /* Red for active circle in dark mode */
+}
+
+body.dark .side-circle:hover {
+    background-color: #888; /* Brighter gray on hover */
+}
+
 
 /* Active Side Circle */
 .side-circle.active {
@@ -639,15 +715,6 @@ body.dark .filter-btn:hover {
     background-color: #007bff; /* Active circle color */
 }
 
-/* Optional: Add hover effect */
-.side-circle:hover {
-    background-color: #555; /* Darker shade on hover */
-    cursor: pointer; /* Change cursor to pointer */
-}
-
-body.dark .side-line::before {
-    background-color: #ff000000;
-}
 
 /* Side Circles - Dark Theme */
 body.dark .side-circle {
@@ -845,8 +912,8 @@ body.dark .skill-btn {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px); /* Add blur effect */
     display: none;
+    backdrop-filter: blur(5px); /* Add blur effect */
     justify-content: center;
     align-items: center;
     z-index: 1000;
