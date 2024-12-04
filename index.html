@@ -167,7 +167,7 @@
 
             <!-- Computer Vision Projects -->
 
-            <div class="project-card" data-category="cv" onclick="expandCard(this)">
+            <div class="project-card" data-category="cv dl" onclick="expandCard(this)">
                 <div class="media-container">
                     <div class="project_carousel">
                         <img src="assets/vio.gif" alt="Slide 1">
@@ -193,7 +193,7 @@
 
                     <!-- Buttons -->
                     <div class="project-buttons">
-                        <a href="https://github.com/example-repo" target="_blank" class="btn btn-github">
+                        <a href="https://github.com/miheer-diwan/Classical-and-Deep-VIO.git" target="_blank" class="btn btn-github">
                             <i class="fab fa-github"></i> GitHub
                         </a>
                         <a href="https://example-report.com" target="_blank" class="btn btn-report">
@@ -228,9 +228,9 @@
                     </div>
                 </div>
             </div>
-        
+
             <!-- Panorama Stitching -->
-            <div class="project-card" data-category="cv">
+            <div class="project-card" data-category="cv dl">
                 <div class="media-container">
                     <div class="project_carousel">
                         <img src="assets/mih.png" alt="Panorama Stitching">
@@ -253,7 +253,7 @@
             </div>
         
             <!-- Einstein Vision -->
-            <div class="project-card" data-category="cv">
+            <div class="project-card" data-category="cv dl sim">
                 <div class="media-container">
                     <div class="project_carousel">
                         <img src="assets/ev.gif" alt="Einstein Vision">
@@ -276,7 +276,7 @@
             </div>
         
             <!-- Neural Radiance Fields (NeRF) -->
-            <div class="project-card" data-category="cv">
+            <div class="project-card" data-category="cv dl">
                 <div class="media-container">
                     <div class="project_carousel">
                         <img src="assets/lego_gif.gif" alt="NeRF Visualization">
@@ -322,7 +322,7 @@
             </div>
 
             <!-- Gaussian Splatting -->
-            <div class="project-card" data-category="cv">
+            <div class="project-card" data-category="cv dl">
                 <div class="media-container">
                     <div class="project_carousel">
                         <img src="assets/gompei_gauss.mp4" alt="Gaussian Splatting">
@@ -362,8 +362,8 @@
                 </div>
             </div>
 
-            <!-- Aerial Robotics Projects -->
-            <div class="project-card" data-category="ar" onclick="expandCard(this)">
+        <!-- Aerial Robotics Projects -->
+            <div class="project-card" data-category="ar dl sim" onclick="expandCard(this)">
                 <div class="media-container">
                     <div class="project_carousel">
                         <video autoplay muted>
@@ -392,7 +392,7 @@
 
                     <!-- Buttons -->
                     <div class="project-buttons">
-                        <a href="https://github.com/example-repo" target="_blank" class="btn btn-github">
+                        <a href="https://github.com/miheer-diwan/Sim-2-Real-Mini-Drone-Racing.git" target="_blank" class="btn btn-github">
                             <i class="fab fa-github"></i> GitHub
                         </a>
                         <a href="https://example-report.com" target="_blank" class="btn btn-report">
@@ -402,9 +402,126 @@
                 </div>
             </div>
 
+            <div class="project-card" data-category="ar sim nav" onclick="expandCard(this)">
+                <div class="media-container">
+                    <div class="project_carousel">
+                        <video autoplay muted>
+                            <source src="assets/rrt_vid.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <!-- <img src="assets/kalman.png" alt="Slide 2">
+                        <img src="assets/mih.png" alt="Slide 3"> -->
+                    </div>
+                    <!-- Hover Image/Video -->
+                    <video class="hover-media" muted>
+                        <source src="assets/rrt_vid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h4>Quadrotor Motion Planning Stack</h4>
+                    <p>- Implemented RRT path planner and cubic spline trajectory generator for quadrotor in 3D using Blender.
+                    <br>- Designed and tuned a PX4 based cascaded PID control for collision-free quadrotor navigation.
+                    <br>- Validated a robust collision detection system for real-time quadrotor planning.</p>
+                    <!-- Skills Buttons -->
+                    <div class="project-skills">
+                        <button class="skill-btn">YOLO</button>
+                        <button class="skill-btn">ROS2</button>
+                        <button class="skill-btn">Python</button>
+                    </div>
 
-            <!-- Deep Learning Projects -->
-            <div class="project-card" data-category="dl" onclick="expandCard(this)">
+                    <!-- Buttons -->
+                    <div class="project-buttons">
+                        <a href="https://github.com/miheer-diwan/Quadrotor-Motion-Planning-Stack.git" target="_blank" class="btn btn-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://example-report.com" target="_blank" class="btn btn-report">
+                            <i class="fas fa-file-alt"></i> Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ar nav sim" onclick="expandCard(this)">
+                <div class="media-container">
+                    <div class="project_carousel">
+                        <!-- <video autoplay muted>
+                            <source src="assets/traj_ortho_view.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video> -->
+                        <img src="assets/traj_ortho.png" alt="Slide 2">
+                        <!-- <img src="assets/mih.png" alt="Slide 3"> -->
+                    </div>
+                    <!-- Hover Image/Video -->
+                    <video class="hover-media" muted>
+                        <source src="assets/traj_ortho_view.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h4>Robust Quadrotor Trajectory Tracking Using Sliding Mode Control</h4>
+                    <p>Design of a sliding mode controller for altitude and attitude control of the Crazyflie 2.0 to enable the quadrotor to track desired trajectories and visit a set of desired waypoints.</p>
+                    <!-- Skills Buttons -->
+                    <div class="project-skills">
+                        <button class="skill-btn">YOLO</button>
+                        <button class="skill-btn">ROS2</button>
+                        <button class="skill-btn">Python</button>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="project-buttons">
+                        <a href="https://github.com/miheer-diwan/quadrotor_sliding_mode_control.git" target="_blank" class="btn btn-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://example-report.com" target="_blank" class="btn btn-report">
+                            <i class="fas fa-file-alt"></i> Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ar sim" onclick="expandCard(this)">
+                <div class="media-container">
+                    <div class="project_carousel">
+                        <!-- <video autoplay muted>
+                            <source src="assets/traj_ortho_view.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video> -->
+                        <img src="assets/traj_ortho.png" alt="Slide 2">
+                        <!-- <img src="assets/mih.png" alt="Slide 3"> -->
+                    </div>
+                    <!-- Hover Image/Video -->
+                    <video class="hover-media" muted>
+                        <source src="assets/traj_ortho_view.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h4>Waypoint Navigation and AprilTag Landing</h4>
+                    <p>Developed a dynamic 3D waypoint navigation algorithm and integrated AprilTag scanning for landing maneuvers.</p>
+                    <p>Engineered a Cascaded PID controller based on the PX4 stack to ensure precise trajectory tracking.</p>             <!-- Skills Buttons -->
+                    <div class="project-skills">
+                        <button class="skill-btn">YOLO</button>
+                        <button class="skill-btn">ROS2</button>
+                        <button class="skill-btn">Python</button>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="project-buttons">
+                        <a href="https://github.com/miheer-diwan/Waypoint-Navigation-and-AprilTag-Landing.git" target="_blank" class="btn btn-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://example-report.com" target="_blank" class="btn btn-report">
+                            <i class="fas fa-file-alt"></i> Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Navigation Projects -->
+
+            <!-- EKF -->
+            <div class="project-card" data-category="ar nav" onclick="expandCard(this)">
                 <div class="media-container">
                     <div class="project_carousel">
                         <img src="assets/chip.jpg" alt="Slide 1">
@@ -418,9 +535,9 @@
                     </video>
                 </div>
                 <div class="project-info">
-                    <h4>Path Planning with Deep RL</h4>
-                    <p>Designed a reinforcement learning model for robot navigation in dynamic environments.</p>
-
+                    <h4>Vision-Based Localization using Non-linear Kalman Filters</h4>
+                    <p>Performed robust quadrotor pose estimation in 3D space by using Quadrotor Dynamics and Extended Kalman Filter</p>
+                    <p>Developed a vision-based observation model to get pose-estimates from AprilTags and improve prediction accuracy.</p>
                     <!-- Skills Buttons -->
                     <div class="project-skills">
                         <button class="skill-btn">YOLO</button>
@@ -430,7 +547,7 @@
 
                     <!-- Buttons -->
                     <div class="project-buttons">
-                        <a href="https://github.com/example-repo" target="_blank" class="btn btn-github">
+                        <a href="https://github.com/miheer-diwan/EKF.git" target="_blank" class="btn btn-github">
                             <i class="fab fa-github"></i> GitHub
                         </a>
                         <a href="https://example-report.com" target="_blank" class="btn btn-report">
@@ -440,8 +557,8 @@
                 </div>
             </div>
 
-            <!-- Simulation Projects -->
-            <div class="project-card" data-category="simulation" onclick="expandCard(this)">
+            <!-- Bayes Filter -->
+            <div class="project-card" data-category="nav" onclick="expandCard(this)">
                 <div class="media-container">
                     <div class="project_carousel">
                         <img src="assets/chip.jpg" alt="Slide 1">
@@ -455,8 +572,8 @@
                     </video>
                 </div>
                 <div class="project-info">
-                    <h4>Gazebo Simulation</h4>
-                    <p>Simulated a robot navigating multiple waypoints in Gazebo using ROS2 and Nav2.</p>
+                    <h4>Bayes Filter</h4>
+                    <p>Implemented a Bayes filter for state estimation of a robot in a 2D space.</p>
 
                     <!-- Skills Buttons -->
                     <div class="project-skills">
@@ -467,7 +584,7 @@
 
                     <!-- Buttons -->
                     <div class="project-buttons">
-                        <a href="https://github.com/example-repo" target="_blank" class="btn btn-github">
+                        <a href="https://github.com/miheer-diwan/Bayes-Filter.git" target="_blank" class="btn btn-github">
                             <i class="fab fa-github"></i> GitHub
                         </a>
                         <a href="https://example-report.com" target="_blank" class="btn btn-report">
@@ -477,8 +594,8 @@
                 </div>
             </div>
 
-            <!-- Navigation Projects -->
-            <div class="project-card" data-category="navigation" onclick="expandCard(this)">
+            <!-- Kalman Filter -->
+            <div class="project-card" data-category="nav" onclick="expandCard(this)">
                 <div class="media-container">
                     <div class="project_carousel">
                         <img src="assets/chip.jpg" alt="Slide 1">
@@ -492,8 +609,8 @@
                     </video>
                 </div>
                 <div class="project-info">
-                    <h4>LiDAR Navigation</h4>
-                    <p>Developed a LiDAR-based navigation system for autonomous ground vehicles.</p>
+                    <h4>Kalman Filter</h4>
+                    <p>Implemented a Kalman Filter in Python for quadrotor localization in 3D space.</p>
 
                     <!-- Skills Buttons -->
                     <div class="project-skills">
@@ -504,7 +621,7 @@
 
                     <!-- Buttons -->
                     <div class="project-buttons">
-                        <a href="https://github.com/example-repo" target="_blank" class="btn btn-github">
+                        <a href="https://github.com/miheer-diwan/Kalman-Filter.git" target="_blank" class="btn btn-github">
                             <i class="fab fa-github"></i> GitHub
                         </a>
                         <a href="https://example-report.com" target="_blank" class="btn btn-report">
@@ -514,10 +631,159 @@
                 </div>
             </div>
 
+            <!-- Particle Filter -->
+            <div class="project-card" data-category="nav" onclick="expandCard(this)">
+                <div class="media-container">
+                    <div class="project_carousel">
+                        <img src="assets/chip.jpg" alt="Slide 1">
+                        <img src="assets/kalman.png" alt="Slide 2">
+                        <img src="assets/mih.png" alt="Slide 3">
+                    </div>
+                    <!-- Hover Image/Video -->
+                    <video class="hover-media" muted>
+                        <source src="assets/perception.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h4>Particle Filter</h4>
+                    <p>Implemented a Particle Filter (EKF) in Python for quadrotor localization in 3D space.</p>
+
+                    <!-- Skills Buttons -->
+                    <div class="project-skills">
+                        <button class="skill-btn">YOLO</button>
+                        <button class="skill-btn">ROS2</button>
+                        <button class="skill-btn">Python</button>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="project-buttons">
+                        <a href="https://github.com/miheer-diwan/Particle-Filter.git" target="_blank" class="btn btn-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://example-report.com" target="_blank" class="btn btn-report">
+                            <i class="fas fa-file-alt"></i> Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Particle Filter -->
+            <div class="project-card" data-category="nav" onclick="expandCard(this)">
+                <div class="media-container">
+                    <div class="project_carousel">
+                        <img src="assets/chip.jpg" alt="Slide 1">
+                        <img src="assets/kalman.png" alt="Slide 2">
+                        <img src="assets/mih.png" alt="Slide 3">
+                    </div>
+                    <!-- Hover Image/Video -->
+                    <video class="hover-media" muted>
+                        <source src="assets/perception.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h4>Particle Filter</h4>
+                    <p>Implemented a Particle Filter (EKF) in Python for quadrotor localization in 3D space.</p>
+
+                    <!-- Skills Buttons -->
+                    <div class="project-skills">
+                        <button class="skill-btn">YOLO</button>
+                        <button class="skill-btn">ROS2</button>
+                        <button class="skill-btn">Python</button>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="project-buttons">
+                        <a href="https://github.com/miheer-diwan/Particle-Filter.git" target="_blank" class="btn btn-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://example-report.com" target="_blank" class="btn btn-report">
+                            <i class="fas fa-file-alt"></i> Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Simulation Projects -->
+
+            <!-- SCARA Robot -->
+            <div class="project-card" data-category="sim" onclick="expandCard(this)">
+                <div class="media-container">
+                    <div class="project_carousel">
+                        <img src="assets/chip.jpg" alt="Slide 1">
+                        <img src="assets/kalman.png" alt="Slide 2">
+                        <img src="assets/mih.png" alt="Slide 3">
+                    </div>
+                    <!-- Hover Image/Video -->
+                    <video class="hover-media" muted>
+                        <source src="assets/perception.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h4>SCARA Robot Simulator</h4>
+                    <p> Position and Velocity control of SCARA robot using a PID Controller in a simulated environment in ROS2 and Gazebo.</p>
+
+                    <!-- Skills Buttons -->
+                    <div class="project-skills">
+                        <button class="skill-btn">YOLO</button>
+                        <button class="skill-btn">ROS2</button>
+                        <button class="skill-btn">Python</button>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="project-buttons">
+                        <a href="https://github.com/miheer-diwan/SCARA-manipulator.git" target="_blank" class="btn btn-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://example-report.com" target="_blank" class="btn btn-report">
+                            <i class="fas fa-file-alt"></i> Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hybrid Foldable Robots -->
+            <div class="project-card" data-category="sim" onclick="expandCard(this)">
+                <div class="media-container">
+                    <div class="project_carousel">
+                        <img src="assets/chip.jpg" alt="Slide 1">
+                        <img src="assets/kalman.png" alt="Slide 2">
+                        <img src="assets/mih.png" alt="Slide 3">
+                    </div>
+                    <!-- Hover Image/Video -->
+                    <video class="hover-media" muted>
+                        <source src="assets/perception.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h4>Hybrid-Foldable-Robots</h4>
+                    <p> Quadruped robot simulation.</p>
+
+                    <!-- Skills Buttons -->
+                    <div class="project-skills">
+                        <button class="skill-btn">YOLO</button>
+                        <button class="skill-btn">ROS2</button>
+                        <button class="skill-btn">Python</button>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="project-buttons">
+                        <a href="https://github.com/miheer-diwan/Hybrid-Foldable-Robots.git" target="_blank" class="btn btn-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://example-report.com" target="_blank" class="btn btn-report">
+                            <i class="fas fa-file-alt"></i> Report
+                        </a>
+                    </div>
+                </div>
+            </div>
         <!-- MACHINE LEARNING PROJECTS -->
 
         <!-- Decision Trees -->
-        <div class="project-card" data-category="ml">
+        <div class="project-card" data-category="dl">
             <div class="media-container">
                 <img src="assets/nn.jpg" alt="Decision Trees">
             </div>
@@ -537,7 +803,7 @@
         </div>
 
         <!-- Linear Regression -->
-        <div class="project-card" data-category="ml">
+        <div class="project-card" data-category="dl">
             <div class="media-container">
                 <img src="assets/nn.jpg" alt="Linear Regression">
             </div>
@@ -557,7 +823,7 @@
         </div>
 
         <!-- Logistic Regression with SGD -->
-        <div class="project-card" data-category="ml">
+        <div class="project-card" data-category="dl">
             <div class="media-container">
                 <img src="assets/nn.jpg" alt="Logistic Regression with SGD">
             </div>
@@ -577,7 +843,7 @@
         </div>
 
         <!-- Softmax Regression -->
-        <div class="project-card" data-category="ml">
+        <div class="project-card" data-category="dl">
             <div class="media-container">
                 <img src="assets/nn.jpg" alt="Softmax Regression">
             </div>
@@ -597,7 +863,7 @@
         </div>
 
         <!-- Classification using Neural Networks -->
-        <div class="project-card" data-category="ml">
+        <div class="project-card" data-category="dl">
             <div class="media-container">
                 <img src="assets/nn.jpg" alt="Classification using Neural Networks">
             </div>
@@ -610,74 +876,6 @@
                 </div>
                 <div class="project-buttons">
                     <a href="https://github.com/miheer-diwan/Machine-Learning/tree/350371e1e65ed7b06ae17a14a823f4aec285852f/Classification%20with%20Neural%20Networks" target="_blank" class="btn btn-github">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- AERIAL ROBOTICS PROJECTS -->
-
-        <!-- Quadrotor Motion Planning Stack -->
-        <div class="project-card" data-category="ar">
-            <div class="media-container">
-                <video class="hover-media" muted>
-                    <source src="assets/rrt_vid.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="project-info">
-                <h4>Quadrotor Motion Planning Stack</h4>
-                <p>Implemented RRT path planner and cubic spline trajectory generator for quadrotor in 3D using Blender.</p>
-                <div class="project-skills">
-                    <button class="skill-btn">RRT</button>
-                    <button class="skill-btn">PX4</button>
-                    <button class="skill-btn">Python</button>
-                </div>
-                <div class="project-buttons">
-                    <a href="https://github.com/miheer-diwan/Quadrotor-Motion-Planning-Stack.git" target="_blank" class="btn btn-github">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- NAVIGATION PROJECTS -->
-
-        <!-- Vision-Based Localization using Kalman Filters -->
-        <div class="project-card" data-category="navigation">
-            <div class="media-container">
-                <img src="assets/ekf.png" alt="Kalman Filters">
-            </div>
-            <div class="project-info">
-                <h4>Vision-Based Localization using Non-linear Kalman Filters</h4>
-                <p>Performed robust quadrotor pose estimation in 3D space using AprilTags.</p>
-                <div class="project-skills">
-                    <button class="skill-btn">Kalman Filter</button>
-                    <button class="skill-btn">Python</button>
-                </div>
-                <div class="project-buttons">
-                    <a href="https://github.com/miheer-diwan/EKF.git" target="_blank" class="btn btn-github">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Particle Filter -->
-        <div class="project-card" data-category="navigation">
-            <div class="media-container">
-                <img src="assets/pf.png" alt="Particle Filter">
-            </div>
-            <div class="project-info">
-                <h4>Particle Filter</h4>
-                <p>Implemented a Particle Filter for quadrotor localization in 3D space.</p>
-                <div class="project-skills">
-                    <button class="skill-btn">Python</button>
-                    <button class="skill-btn">Robotics</button>
-                </div>
-                <div class="project-buttons">
-                    <a href="https://github.com/miheer-diwan/Particle-Filter.git" target="_blank" class="btn btn-github">
                         <i class="fab fa-github"></i> GitHub
                     </a>
                 </div>
