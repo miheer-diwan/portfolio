@@ -1,9 +1,8 @@
 /* ========== General Styles ========== */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
-    background-color: #b1b1b152;
+    background-color: #d1d1d152;
     color: #333;
 }
 
@@ -179,8 +178,7 @@ input:checked + .theme-label .moon {
 
 /* Paragraph Text */
 .section p {
-    font-size: 1.1rem; /* Slightly larger paragraph text */
-    margin: 10px 0; /* Add spacing between paragraphs */
+    font-size: 1.0rem; /* Slightly larger paragraph text */
 }
 
 /* Adjustments for Specific Sections (Optional) */
@@ -330,11 +328,11 @@ body.dark .side-nav-item:hover {
     width: 100%;
     max-width: 800px;
     margin: 10px auto;
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid #ddd;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    /* border: 1px solid #ddd; */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -369,26 +367,31 @@ body.dark .side-nav-item:hover {
 /* ========== Project Card Styles ========== */
 .project-card {
     background-color: #fff;
-    border-radius: 20px;
-    padding: 15px;
+    border-radius: 5px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border: 1px solid #ddd;
-    max-width: 300px;
+    border: 0px solid #ddd;
+    max-width: 350px;
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 20px; /* Reduce vertical spacing between cards */
     transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    height: auto; /* Set a fixed height for the card */
+    display: flex;
+    flex-direction: column;
 }
 
-/* .project-card img,
+.project-card img,
 .project-card video {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-} */
+    /* height: auto; */
+    border-radius: 0px;
+    object-fit: cover; /* Maintain aspect ratio of the image */
+
+}
 
 .project-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* transform: scale(1.02); */
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.4);
 }
 
 .project-card img {
@@ -397,6 +400,15 @@ body.dark .side-nav-item:hover {
 
 .project-card img:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-info {
+    padding: 30px; /* Add padding to the text section */
+    text-align: left; /* Align text to the left */
+    flex-grow: 1; /* Ensure it takes available space */
+    overflow-y: auto; /* Enable vertical scrolling if text overflows */
+    max-height: calc(100% - 150px); /* Adjust height based on card and image size */
+
 }
 
 /* ========== Projects Filter Navigation ========== */
@@ -441,7 +453,7 @@ body.dark .side-nav-item:hover {
 .projects-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     /* justify-content: center; */
 }
 
@@ -461,8 +473,8 @@ body.dark .side-nav-item:hover {
 .carousel-message {
     position: absolute;
     top: 50%; /* Center vertically */
-    left: 10%; /* Position slightly left */
-    transform: translateY(-50%); /* Adjust vertical centering */
+    left: 30%; /* Position slightly left */
+    transform: translateY(50%); /* Adjust vertical centering */
     text-align: left; /* Align text to the left */
     color: rgb(0, 0, 0); /* White text color */
     font-size: 1.5rem; /* Adjust font size */
@@ -739,6 +751,7 @@ body.dark .side-circle:hover {
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -829,10 +842,10 @@ body.dark .skill-btn {
 .media-container {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 250px;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
 
 /* Default Slideshow */
@@ -866,7 +879,7 @@ body.dark .skill-btn {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
